@@ -1,0 +1,58 @@
+/**
+*
+* Variables CSS Elements
+*
+**/
+
+/** FONTS **/
+$RobotoItalic: 'RobotoItalic',sans-serif;
+$RobotoLight: 'RobotoLight',sans-serif;
+$RobotoBold: 'RobotoBold',sans-serif;
+$RobotoMedium: 'RobotoMedium',sans-serif;
+$RobotoRegular: 'RobotoRegular',sans-serif;
+
+
+/**** HEADER ****/
+
+    /*** NAV ***/
+
+        //Padding - Margin
+        $padding_menu_container: 1rem 0;
+        $margin_menu_container: 0 1rem;
+        $padding_menu_container_button_after: 0 1rem 0 0;
+
+            //Menu Background
+            $padding_menu_container_background: 0.2rem 0;
+
+        //Font
+        $font_menu_container_author: 1.8rem;
+        $font_menu_container_button: 1.5rem;
+
+
+    /*** MENU OPEN ***/
+
+        //Width
+        $width_menu: 25rem;
+        $width_max_menu: 80%;
+
+        //Padding
+        $padding_menu: 4rem 3rem;
+        $padding_menu_nav_li: 0.5rem 0 1rem 0;
+        $padding_menu_nav_li_a: 0 0 0 2.5rem;
+
+        //Font
+        $font_menu_before: 2rem;
+        $font_menu_nav_li_before: 1.2rem;
+        $font_menu_nav_li_a: 1rem;
+        $spacing_menu_nav_li_a: 0.15rem;
+
+
+/**** ARTICLES ****/
+
+    /*** ANIMATION ***/
+    $duration: 0.5s;
+    $duration_descritpion: $duration - 0.1s;
+
+    /*** PADDING ***/
+    $padding_articles_mini : 0 0 0.6rem 0;
+    $padding_articles_full: 0 0 1.5rem 0;

@@ -1,0 +1,88 @@
+/**
+*
+* Thème Default
+*
+**/
+
+*{
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    //overflow-x: hidden;
+    &.no-scroll {
+        overflow: hidden !important;
+    }
+}
+
+html {
+    font-size: 100%;
+    body {
+        position: relative;
+        font-size: 13px;
+        line-height: 1.2;
+        font-family: $RobotoRegular;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100%;
+        //overflow-x: hidden;
+        h1,
+        h2,
+        h3{
+            font-family: $RobotoBold;
+            letter-spacing: 0.2rem;
+        }
+        h1 {
+            font-size: calc(32rem / 13);
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: calc(28rem / 13);
+        }
+        h3 {
+            font-size: calc(20rem / 13);
+        }
+        h4 {
+            font-size: calc(16rem / 13);
+            font-family: $RobotoMedium;
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+            font-family: $RobotoRegular;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        p {
+            font-size: calc(13em / 13);
+            line-height: calc(20 / 13);
+        }
+        .clearfix {
+            display: block;
+            &:after {
+                content: ".";
+                display: block;
+                clear: both;
+                visibility: hidden;
+                line-height: 0;
+                height: 0;
+            }
+        }
+        @import 'partials/_menu-open';
+        #main-wrapper {
+            //overflow: hidden;
+            background: $white;
+            min-height: 62vh;
+            z-index: 1;
+            transition: ease 1s opacity;
+            @import 'partials/_header';
+            @import 'partials/_main-content';
+            @import 'partials/_footer';
+            @import 'commons/_commons_articles';
+            @import 'commons/_commons_comments';
+        }
+    }
+}

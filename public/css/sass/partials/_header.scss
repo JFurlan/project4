@@ -1,0 +1,70 @@
+#main-header {
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    #menu {
+        background-color: transparent;
+        @include transition(all 0.5s ease);
+        .container-fluid {
+            border-bottom: 2px solid white;
+            margin: $margin_menu_container;
+            padding: $padding_menu_container;
+            @include transition(padding 0.5s ease);
+            .author_name,
+            button {
+                color: $white;
+                @include transition(all 0.5s ease);
+            }
+            .author_name{
+                font-size: $font_menu_container_author;
+                text-transform: uppercase;
+                font-family: 'RobotoBold',sans-serif;
+                opacity: 1;
+                @include transition(all 0.5s ease);
+                @include text-shadow(2px 2px $blueDark);
+            }
+            button{
+                padding: 0;
+                background-color: transparent;
+                border: transparent;
+                cursor: pointer;
+                @include transition(color 0.25s ease);
+                span{
+                    font-size: $font_menu_container_button;
+                    text-transform: uppercase;
+                    font-family: 'RobotoMedium',sans-serif;
+                    &:before {
+                        padding: $padding_menu_container_button_after;
+                        font-family: 'Font Awesome\ 5 Free';
+                    }
+                }
+                &:hover{
+                    color: $blueLight;
+                }
+            }
+        }
+        &.background {
+            background-color: $blueDark;
+            border-bottom: 2px solid $white;
+            @include transition(all 0.5s ease);
+            .container-fluid {
+                border-bottom: 2px solid transparent;
+                padding: $padding_menu_container_background;
+                @include transition(padding 0.5s ease);
+                .author_name, button{
+                    color: $white;
+                    @include transition(all 0.5s ease);
+                }
+                .author_name{
+                    opacity: 0;
+                    @include transition(all 0.5s ease);
+                }
+                button{
+                    &:hover{
+                        color: $blueLight;
+                    }
+                }
+            }
+        }
+    }
+}
