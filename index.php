@@ -17,7 +17,9 @@ try{
 
             } else {
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                throw new Exception('Aucun identifiant de billet envoyé');
+                //echo("<center>Erreur, aucun ID de billet envoyé</center>");
+                header("Refresh: 3; URL=index.php");                
+                throw new Exception('Aucun identifiant de billet envoyé. <br>Vous allez être redirigé vers la Home.');
             }
         }
 
@@ -30,11 +32,13 @@ try{
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);
 
                 } else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    header("Refresh: 3; URL=index.php?action=post&id=".$_GET['id']."");
+                    throw new Exception('Merci de remplir tous les champs.');
                 }
             } 
             else {
-                throw new Exception('Aucun identifiant de billet envoyé');
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Aucun identifiant de billet envoyé. <br>Vous allez être redirigé vers la Home.');
             }
         }
     } 

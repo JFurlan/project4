@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Mon blog</title>
-        <link href="style.css" rel="stylesheet" /> 
-    </head>
-        
-    <body>
-        <h1>Mon super blog !</h1>
+<?php $title = $post['title'] . " - Jean Forteroche"; ?>
+
+<?php ob_start(); ?>
+
+    <h1>Mon super blog !</h1>
         <p><a href="index.php">Retour à la liste des billets</a></p>
 
         <div class="news">
@@ -42,9 +37,12 @@
             ?>
             <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
             <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+            <p><a href="index.php?action=post&id=<?= $post['id']; ?>&commentid=<?= $comment['id']; ?>&report=1">Signaler</a></p>
         <?php
 
     }
-    ?>
-    </body>
-</html>
+    $comments->closeCursor();
+?>
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>
