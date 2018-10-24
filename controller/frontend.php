@@ -1,10 +1,10 @@
 <?php
 
-use \JF\Project4\Model\CommentManager;
-use \JF\Project4\Model\PostManager;
+// use \JF\Project4\Model\CommentManager;
+// use \JF\Project4\Model\PostManager;
 
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php'); 
+// require_once('model/PostManager.php');
+// require_once('model/CommentManager.php'); 
 
 /**
  * Function = récupération de tous les posts
@@ -27,8 +27,9 @@ function post(){
     $commentManager = new CommentManager();
 
     $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
-
+//var_dump($post);     
+    $comments = $commentManager->getList($_GET['id']);
+//var_dump($comments); 
     require('view/frontend/postView.php');
 }
 

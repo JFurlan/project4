@@ -1,4 +1,4 @@
-<?php $title = $post['title'] . " - Jean Forteroche"; ?>
+<?php $post->getTitle() . " - Jean Forteroche"; ?>
 
 <?php ob_start(); ?>
 
@@ -7,18 +7,18 @@
 
         <div class="news">
             <h3>
-                <?= htmlspecialchars($post['title']) ?>
-                <em>le <?= $post['creation_date_fr'] ?></em>
+                <?= htmlspecialchars($post->getTitle()) ?>
+                <em>le <?= $post->getCreationDate() ?></em>
             </h3>
             
             <p>
-                <?= nl2br(htmlspecialchars($post['content'])) ?>
+                <?= nl2br(htmlspecialchars($post->getContent())) ?>
             </p>
         </div>
 
         <h2>Commentaires</h2>
 
-        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+        <form action="index.php?action=addComment&amp;id=<?= $post->getId() ?>" method="post">
             <div>
                 <label for="author">Auteur</label><br />
                 <input type="text" id="author" name="author" />
@@ -32,17 +32,14 @@
             </div>
         </form>
 
-        <?php
-        while ($comment = $comments->fetch()) {
-            ?>
-            <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-            <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-            <p><a href="index.php?action=post&id=<?= $post['id']; ?>&commentid=<?= $comment['id']; ?>&report=1">Signaler</a></p>
-        <?php
+        <?php foreach ($comments as $comment) : ?>
 
-    }
-    $comments->closeCursor();
-?>
+            <p><strong><?= htmlspecialchars($comment->getAuthor()) ?></strong> le <?= $comment->getPostedDate() ?></p>
+            <p><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
+            <p><a href="index.php?action=post&id=<?= $post->getId(); ?>&commentid=<?= $comment->getId(); ?>&report=1">Signaler</a></p>
+        
+        <?php endforeach; ?>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

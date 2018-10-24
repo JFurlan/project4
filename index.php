@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+
+/*
+ * Autoload de chargement des classes
+ */
+spl_autoload_register(function ($class) {
+    require_once 'model/' . $class . '.php';
+});
+
+
 require('controller/frontend.php');
 
 try{
@@ -17,7 +27,6 @@ try{
 
             } else {
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                //echo("<center>Erreur, aucun ID de billet envoyé</center>");
                 header("Refresh: 3; URL=index.php");                
                 throw new Exception('Aucun identifiant de billet envoyé. <br>Vous allez être redirigé vers la Home.');
             }

@@ -1,20 +1,31 @@
 <?php
 
-namespace JF\Project4\Model;
+//namespace JF\Project4\Model;
 
-require_once("model/Manager.php");
+//use JF\Project4\Model\Database;
 
-class PostManager extends Manager{
+//require_once("model/Database.php");
+
+class PostManager extends Database{
+
 
     /**
      * Function = Requête SQL de récupération de tous les posts
      * @return $req
      */
-    public function getPosts(){
+    public function getPosts()
+    {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT 0, 5');
+        $posts = []; 
 
-        return $req;
+        $req = $db->query('SELECT * FROM posts ORDER BY creationDate DESC LIMIT 0, 5')  or die(print_r($db->errorInfo()));
+
+        while($datas = $req->fetch(PDO::FETCH_ASSOC)){
+            $post = new Post();
+            $post->hydrate($datas);
+            array_push($posts, $post);
+        };
+        return $posts;
     }
 
 
@@ -25,11 +36,50 @@ class PostManager extends Manager{
      */
     public function getPost($postId){
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts WHERE id = ?');
-        $req->execute(array($postId));
-        $post = $req->fetch();
+
+        $req = $db->prepare('SELECT * FROM posts WHERE id = :id') or die(print_r($db->errorInfo()));
+        $req->bindValue(':id', $postId);
+        $req->execute();
+
+        $datas = $req->fetch(PDO::FETCH_ASSOC);
+
+        $post = new Post();
+        $post->hydrate($datas);
 
         return $post;
     }
+
+
+    /**
+     * Function = add post to BDD
+     * @param Post $post
+     */
+    public function add(Post $post){
+        $db = $this->dbConnect();
+
+        $req = $db->prepare('INSERT INTO posts(id, title, content, creationDate, postImg) VALUES(:id, :title, :content, :creationDate, :postImg)');
+
+        $req->bindValue(':id', $post->id());
+        $req->bindValue(':title', $post->title());
+        $req->bindValue(':content', $post->content());
+        $req->bindValue(':creationDate', $post->creationDate());
+        $req->bindValue(':postImg', $post->postImg());
+        $req->execute();
+    }
+
+
+    /**
+     * Function = Delete post from BDD
+     * @param int $postId
+     */
+    public function delete($postId){
+        $db = $this->dbConnect();
+
+        $req = $db->prepare('DELETE FROM posts WHERE id = :id');
+
+        $req->bindValue(':id', $postId);
+        $req->execute();
+    }
+
 
 }
