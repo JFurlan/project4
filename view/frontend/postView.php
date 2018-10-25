@@ -1,4 +1,4 @@
-<?php $post->getTitle() . " - Jean Forteroche"; ?>
+<?php $title = $post->getTitle() . " - Jean Forteroche"; ?>
 
 <?php ob_start(); ?>
 

@@ -50,6 +50,16 @@ try{
                 throw new Exception('Aucun identifiant de billet envoyé. <br>Vous allez être redirigé vers la Home.');
             }
         }
+
+        //si connect, ajout du formulaire de connexion
+        elseif ($_GET['action'] == 'connect') {
+            connexion();
+        }
+
+        //si connect, ajout du formulaire de connexion
+        elseif ($_GET['action'] == 'verifAdmin') {
+            verifConnexion();
+        }
     } 
     else {
         listPosts();

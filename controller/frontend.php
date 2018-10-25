@@ -52,3 +52,29 @@ function addComment($postId, $author, $comment){
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+
+/**
+ * Function = Verification admin or not
+ */
+function connexion(){
+    require('view/frontend/connexion.php');
+}
+
+
+/**
+ * Function = Verification admin or not
+ */
+function verifConnexion(){
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    if(!empty($login) && (!empty($password))){
+        $manager = new AdminManager();
+        $connected = $manager->checkUser($login, $password);
+        if($connected === null){
+            header("Refresh: 3; URL=index.php?action=connect");
+            throw new Exception('Votre identifiant et/ou votre mot de passe sont incorrects.');
+        }
+        else{
+        }
+    }
+}
