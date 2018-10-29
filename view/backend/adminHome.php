@@ -18,14 +18,14 @@
         </p>
         <?php if($post->getPostImg()) : ?>
             <div>
-                <p>Image de l'article : <a href="public/uploads/<?= $post->getPostImg() ; ?>" target="_blank"><?= $post->getPostImg() ; ?></a></p>
+                <p>Image de l'article : <a href="public/img/<?= $post->getPostImg() ; ?>" target="_blank"><?= $post->getPostImg() ; ?></a></p>
             </div>
         <?php endif; ?>
         <p>
             <a href="index.php?action=adminEditPost&id=<?= $post->getId() ?>" class="btn btn-success">Éditer</a>
         </p>
         <p>
-            <a href="index.php?action=adminDeletePost&id=<?= $post->getId() ?>" class="btn btn-error">Supprimer</a>
+            <a href="index.php?action=deletePost&id=<?= $post->getId() ?>" class="btn btn-error">Supprimer</a>
         </p>
     </div>
 <?php endforeach; ?>

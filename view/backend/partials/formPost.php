@@ -17,11 +17,14 @@
 <br/>
 <div>
     <label>Image associée :</label>
-    <img src="public/img/<?= $_postImg; ?>" alt="">
-    <input class="form-control" name="img" placeholder="Aucune image associée" value="<?php if (isset($_postImg)) echo($_postImg); ?>">
+    <?php if (isset($_postImg)) : ?>
+        <img style="width: 100%; height: 200px;" src="public/img/<?= $_postImg; ?>" alt="">
+    <?php endif; ?>
+    <input class="form-control" name="img" placeholder="Aucune image associée" value="<?php if(isset($_postImg)){ echo($_postImg); }; ?>">
 </div>
 <br/>
 <div>
+    <p>Ajoutez une nouvelle image :</p>
     <label>Taille maximale : 1mo</label>
     <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
     <input type="file" class="form-control-file border" name="postImg">

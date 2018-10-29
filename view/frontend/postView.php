@@ -36,7 +36,7 @@
 
             <p><strong><?= htmlspecialchars($comment->getAuthor()) ?></strong> le <?= $comment->getPostedDate() ?></p>
             <p><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
-            <p><a href="index.php?action=post&id=<?= $post->getId(); ?>&commentid=<?= $comment->getId(); ?>&report=1">Signaler</a></p>
+            <p><a href="index.php?action=report&id=<?= $post->getId(); ?>&commentId=<?= $comment->getId(); ?>">Signaler</a></p>
         
         <?php endforeach; ?>
 

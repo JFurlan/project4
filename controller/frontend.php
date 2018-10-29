@@ -86,3 +86,14 @@ function verifConnexion(){
         }
     }
 }
+
+/**
+ * Function = Suppression du commentaire concerné
+ */
+function reportingComment(){
+    $commentId = $_GET['commentId'];
+    $commentsManager = new CommentManager();
+    $commentsManager->reportingComment($commentId);
+    header("Refresh: 3; URL=index.php");
+    throw new Exception('Le commentaire a bien été signalé. ');
+}

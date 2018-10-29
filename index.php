@@ -52,6 +52,17 @@ try{
             }
         }
 
+        //Reporting du comment sélectionné
+        elseif ($_GET['action'] == 'report') {
+            if (isset($_GET['commentId']) && $_GET['commentId'] > 0) {
+                reportingComment();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Aucun identifiant de commentaire envoyé. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+
         //si connect, ajout du formulaire de connexion
         elseif ($_GET['action'] == 'connect') {
             connexion();
@@ -62,7 +73,11 @@ try{
             verifConnexion();
         }
 
-        //interface admin
+
+        /**
+         * INTERFACE ADMIN
+         */
+
         elseif ($_GET['action'] == 'adminHome') {
             if(isset($_SESSION['login'])){
                 adminHome();
@@ -81,6 +96,15 @@ try{
                 throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
             }
         }
+        elseif ($_GET['action'] == 'addPost') {
+            if(isset($_SESSION['login'])){
+                addPost();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
         elseif ($_GET['action'] == 'adminEditPost') {
             if(isset($_SESSION['login'])){
                 adminEditPost();
@@ -93,6 +117,42 @@ try{
         elseif ($_GET['action'] == 'updatePost') {
             if(isset($_SESSION['login'])){
                 updatePost();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'deletePost') {
+            if(isset($_SESSION['login'])){
+                deletePost();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'adminComments') {
+            if(isset($_SESSION['login'])){
+                adminComments();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'deleteComment') {
+            if(isset($_SESSION['login'])){
+                deleteComment();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'cancelReport') {
+            if(isset($_SESSION['login'])){
+                cancelReportingComment();
             }
             else{
                 header("Refresh: 3; URL=index.php");

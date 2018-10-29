@@ -90,10 +90,10 @@ class PostManager extends Database{
      * Function = Delete post from BDD
      * @param int $postId
      */
-    public function delete($postId){
+    public function deletePost($postId){
         $db = $this->dbConnect();
 
-        $req = $db->prepare('DELETE * FROM posts WHERE id = :id');
+        $req = $db->prepare('DELETE FROM posts WHERE id = :id');
 
         $req->bindValue(':id', $postId);
         $req->execute();
