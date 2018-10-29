@@ -65,8 +65,12 @@ function connexion(){
  * Function = Verification admin or not
  */
 function verifConnexion(){
-    $login = $_POST['login'];
-    $password = $_POST['password'];
+    /*
+     *  Récupération des données de SESSION
+     */
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+
     if(!empty($login) && (!empty($password))){
         $manager = new AdminManager();
         $connected = $manager->checkUser($login, $password);
@@ -75,6 +79,10 @@ function verifConnexion(){
             throw new Exception('Votre identifiant et/ou votre mot de passe sont incorrects.');
         }
         else{
+            $_SESSION['login'] = $login;
+            $_SESSION['password'] = $password;
+            $_SESSION['role'] = "admin";
+            header("Refresh: 0; URL=index.php?action=adminHome");
         }
     }
 }

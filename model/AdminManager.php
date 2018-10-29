@@ -20,7 +20,6 @@ class AdminManager extends Database{
         $req->execute();
         $data = $req->fetch(PDO::FETCH_ASSOC);
         if ($data){
-            echo('<center>Bien joué</center>');
             return $data;
         }
     }

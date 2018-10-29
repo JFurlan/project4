@@ -54,16 +54,34 @@ class PostManager extends Database{
      * Function = add post to BDD
      * @param Post $post
      */
-    public function add(Post $post){
+    public function addPost(Post $post){
         $db = $this->dbConnect();
 
         $req = $db->prepare('INSERT INTO posts(id, title, content, creationDate, postImg) VALUES(:id, :title, :content, :creationDate, :postImg)');
 
-        $req->bindValue(':id', $post->id());
-        $req->bindValue(':title', $post->title());
-        $req->bindValue(':content', $post->content());
-        $req->bindValue(':creationDate', $post->creationDate());
-        $req->bindValue(':postImg', $post->postImg());
+        $req->bindValue(':id', $post->getId());
+        $req->bindValue(':title', $post->getTitle());
+        $req->bindValue(':content', $post->getContent());
+        $req->bindValue(':creationDate', $post->getCreationDate());
+        $req->bindValue(':postImg', $post->getPostImg());
+        $req->execute();
+    }
+
+
+    /**
+     * Function = update post to BDD
+     * @param Post $post
+     */
+    public function updatePost(Post $post){
+        $db = $this->dbConnect();
+
+        $req = $db->prepare('UPDATE posts SET title = :title, content = :content, creationDate = :creationDate, postImg = :postImg WHERE id = :id');
+
+        $req->bindValue(':id', $post->getId());
+        $req->bindValue(':title', $post->getTitle());
+        $req->bindValue(':content', $post->getContent());
+        $req->bindValue(':creationDate', $post->getCreationDate());
+        $req->bindValue(':postImg', $post->getPostImg());
         $req->execute();
     }
 
@@ -75,7 +93,7 @@ class PostManager extends Database{
     public function delete($postId){
         $db = $this->dbConnect();
 
-        $req = $db->prepare('DELETE FROM posts WHERE id = :id');
+        $req = $db->prepare('DELETE * FROM posts WHERE id = :id');
 
         $req->bindValue(':id', $postId);
         $req->execute();

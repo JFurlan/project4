@@ -11,6 +11,7 @@ spl_autoload_register(function ($class) {
 
 
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try{
 
@@ -56,9 +57,47 @@ try{
             connexion();
         }
 
-        //si connect, ajout du formulaire de connexion
+        //vérification admin après validation form de connexion
         elseif ($_GET['action'] == 'verifAdmin') {
             verifConnexion();
+        }
+
+        //interface admin
+        elseif ($_GET['action'] == 'adminHome') {
+            if(isset($_SESSION['login'])){
+                adminHome();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'adminNewPost') {
+            if(isset($_SESSION['login'])){
+                adminNewPost();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'adminEditPost') {
+            if(isset($_SESSION['login'])){
+                adminEditPost();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
+        }
+        elseif ($_GET['action'] == 'updatePost') {
+            if(isset($_SESSION['login'])){
+                updatePost();
+            }
+            else{
+                header("Refresh: 3; URL=index.php");
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+            }
         }
     } 
     else {
