@@ -46,6 +46,26 @@ class CommentManager extends Database{
     }
 
     /**
+     * Function = Requête SQL de récupération de tous les commentaires
+     * @return $comments
+     */
+    public function getListComments()
+    {
+        $db = $this->dbConnect();
+        $comments = [];
+
+        $req = $db->prepare('SELECT * FROM comments ORDER BY postedDate DESC') or die(print_r($db->errorInfo()));
+        $req->execute();
+
+        while($datas = $req->fetch(PDO::FETCH_ASSOC)){
+            $comment = new Comment();
+            $comment->hydrate($datas);
+            array_push($comments, $comment);
+        };
+        return $comments;
+    }
+
+      /**
      * Function = Requête SQL de récupération des commentaires signalés
      * @return $comments
      */

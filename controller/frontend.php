@@ -91,9 +91,11 @@ function verifConnexion(){
  * Function = Suppression du commentaire concerné
  */
 function reportingComment(){
+    $postId = $_GET['id'];
     $commentId = $_GET['commentId'];
     $commentsManager = new CommentManager();
     $commentsManager->reportingComment($commentId);
-    header("Refresh: 3; URL=index.php");
+    header('Refresh: 1; URL=index.php?action=post&id=' . $postId);
+    //echo "<p>Le commentaire a bien été signalé. </p>";
     throw new Exception('Le commentaire a bien été signalé. ');
 }

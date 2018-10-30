@@ -123,6 +123,16 @@ function uploadImage(){
  */
 function adminComments(){
     $commentsManager = new CommentManager();
+    $comments = $commentsManager->getListComments();
+    require('view/backend/adminComments.php');
+}
+
+
+/**
+ * Function = Affichage des commentaires
+ */
+function adminCommentsReported(){
+    $commentsManager = new CommentManager();
     $comments = $commentsManager->getListReported();
     require('view/backend/adminComments.php');
 }
@@ -149,4 +159,13 @@ function cancelReportingComment(){
     $commentsManager->cancelReportingComment($commentId);
     header("Refresh: 3; URL=index.php?action=adminComments");
     throw new Exception('Le signalement de ce commentaire a bien été supprimé. ');
+}
+
+/**
+ * Function = Déconnexion de l'Admin et suppression de la SESSION
+ */
+function deconnexion(){
+    session_destroy();
+    header("Refresh: 3; URL=index.php");
+    throw new Exception('Vous avez été déconnecté de l\'administation.');
 }

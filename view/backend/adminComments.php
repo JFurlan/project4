@@ -5,6 +5,9 @@
 
 <h1>Welcome <?= strtoupper($_SESSION['login']);  ?></h1>
 
+<p><a href="index.php?action=adminComments">Tous les commentaires</a></p>
+<p><a href="index.php?action=adminCommentsReported">Tous les commentaires Signalés</a></p>
+
 <?php foreach ($comments as $comment) : ?>
     <div class="news">
         <h3>
