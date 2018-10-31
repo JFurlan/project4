@@ -34,8 +34,13 @@ function addPost(){
     $newPost->setSubTitle($_POST['subtitle']);
     $newPost->setContent($_POST['content']);
     $newPost->setCreationDate(date("Y-m-d"));
+    $newPost->setPostImg($_POST['img']);
     if(!$_FILES['postImg']['error']){
+        $newPost->setPostImg($_FILES['postImg']['name']);
         uploadImage();
+    }
+    else{
+        $newPost->setPostImg($_POST['img']);
     }
     $manager = new PostManager;
     $manager->addPost($newPost);
@@ -102,10 +107,10 @@ function deletePost(){
  */
 function uploadImage(){
     if(isset($_FILES['postImg'])){
-        $file = $_FILES['postImg']['name'];
-        $size = $_FILES['postImg']['size'];
-        $tmp = $_FILES['postImg']['tmp_name'];
-        $type = $_FILES['postImg']['type'];
+        $file   = $_FILES['postImg']['name'];
+        $size   = $_FILES['postImg']['size'];
+        $tmp    = $_FILES['postImg']['tmp_name'];
+        $type   = $_FILES['postImg']['type'];
 
         if(is_uploaded_file($tmp)){
             if ($type =="image/jpeg" || $type =="image/jpg" || $type =="image/png" && $size<= 1000000) {

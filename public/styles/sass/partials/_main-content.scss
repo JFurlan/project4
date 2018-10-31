@@ -1,5 +1,4 @@
 #main-content {
-    //background-color: $black;
     .highlighted_img_opacity {
         position: absolute;
         top: 0;
@@ -137,6 +136,20 @@
             padding: 5rem 0;
             display: flex;
             justify-content: space-between;
+            &.row{
+                padding-bottom: 2rem;
+            }
+        }
+        .btn {
+            background-color: $blueLight;
+            border: $blueLight 2px solid;
+            padding: 0.5rem 0;
+            font-family: $RobotoBold;
+            @include transition(all $duration ease);
+            &:hover{
+                color: $blueLight;
+                background-color: $white;
+            }
         }
     }
     &.chapter_detail,

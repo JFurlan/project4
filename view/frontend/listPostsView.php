@@ -29,12 +29,12 @@
                     </section>
                     <section class="chapter_body">
                         <h3 class="chapter_title">
-                            <a href="index.php?action=post&id=<?= $post->getId(); ?>"><?= htmlspecialchars($post->getTitle()) ?></a>
+                            <a href="index.php?action=post&id=<?= $post->getId(); ?>"><?= $post->getTitle() ?></a>
                         </h3>
-                        <h4 class="chapter_subtitle"><?= htmlspecialchars($post->getSubTitle()) ?></h4>
-                        <p class="chapter_description">
-                            <?= nl2br(htmlspecialchars($post->getContent())) ?>
-                        </p>
+                        <h4 class="chapter_subtitle"><?= $post->getSubTitle() ?></h4>
+                        <div class="chapter_description">
+                            <?= nl2br($post->getContent()) ?>
+                        </div>
                     </section>
                     <footer class="chapter_footer">
                         <span class="icon icon_comments">

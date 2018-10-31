@@ -1,4 +1,4 @@
-<?php $title = 'Administration - Post'; ?>
+<?php $title = 'Administration - Jean Forteroche'; ?>
 
 <?php ob_start(); ?>
 
@@ -23,8 +23,8 @@
                 <div class="col bloc_content">
                     <h3 class="bloc_element"><?= htmlspecialchars($post->getTitle()) ?></h3>
                     <h4 class="bloc_element"><?= htmlspecialchars($post->getSubTitle()) ?></h4>
-                    <p class="bloc_element"><em>Le <?= $date->format('d F Y'); ?></em></p>
-                    <p class="bloc_element content"><?= nl2br(htmlspecialchars($post->getContent())) ?></p>
+                    <p class="bloc_element"><em>Le <?= $date->format('d/m/Y'); ?></em></p>
+                    <div class="bloc_element content"><?= nl2br($post->getContent()) ?></div>
                 </div> 
                 <div class="col-2 bloc_button row align-items-center no-gutters">
                     <p>

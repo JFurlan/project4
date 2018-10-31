@@ -62,9 +62,9 @@
                                 <a href="index.php?action=post&id=<?= $post->getId(); ?>"><?= htmlspecialchars($post->getTitle()) ?></a>
                             </h3>
                             <h4 class="chapter_subtitle"><?= htmlspecialchars($post->getSubTitle()) ?></h4>
-                            <p class="chapter_description">
-                                <?= nl2br(htmlspecialchars($post->getContent())) ?>
-                            </p>
+                            <div class="chapter_description">
+                                <?= nl2br($post->getContent()) ?>
+                            </div>
                         </section>
                         <footer class="chapter_footer">
                             <span class="icon icon_comments">
@@ -75,8 +75,8 @@
                 <?php endforeach; ?>    
             </div>
         </div>
-        <div class="all_chapters">
-            <a href="index.php?action=listPosts" class="btn">Voir tous les chapitres</a>
+        <div class="all_chapters row justify-content-md-center ">
+            <a href="index.php?action=listPosts" class="btn btn-success col-3">Voir tous les chapitres</a>
         </div>
     </section> 
 </section>

@@ -1,4 +1,4 @@
-<?php $title = 'Administration - Post'; ?>
+<?php $title = 'Posts - Administration Jean Forteroche'; ?>
 
 <?php ob_start(); ?>
 

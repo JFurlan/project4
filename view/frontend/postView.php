@@ -11,24 +11,24 @@
         </div>
     </section>
     <?php 
-        $fullDate = $post->getCreationDate();
+        $fullDate = strftime($post->getCreationDate());
         $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
     ?>
     <section class="chapter_description container">
         <article class="chapter chapter_full">
             <section class="chapter_body">
                 <div class="chapter_body_head">
-                    <div class="chapter_body_date_creation">Créé le <?= $date->format('d, F, Y'); ?></div>
+                    <div class="chapter_body_date_creation">Publié le <?= $date->format('d/m/Y'); ?></div>
                     <span class="icon icon_comments">
-                        <a href="#">
+                        <a href="#comments">
                             <i class="far fa-comment-dots"></i>
                             <?= count($comments); ?> commentaires
                         </a>
                     </span>
                 </div>
-                <p class="chapter_description">
-                    <?= nl2br(htmlspecialchars($post->getContent())) ?>
-                </p>
+                <div class="chapter_description">
+                    <?= nl2br($post->getContent()) ?>
+                </div>
             </section>
         </article>
     </section>
@@ -55,7 +55,7 @@
                                     Commentaire <?= ($comment->getStatut() == 0) ? "publié" : "signalé" ; ?>
                                 </p>
                                 <div class="comments_creation">
-                                    <p>Publié le <?= $date->format('d, F, Y'); ?> à <?= $date->format('H:i:s'); ?></p>
+                                    <p>Publié le <?= $date->format('d/m/Y'); ?> à <?= $date->format('H:i:s'); ?></p>
                                 </div>
                                 <div class="comments_content title_decoration">
                                     <p><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>

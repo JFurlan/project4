@@ -245,7 +245,7 @@ strong {
   src: url("../../fonts/Roboto-Medium.ttf") format("truetype"); }
 @font-face {
   font-family: "RobotoRegular";
-  src: url(".../../fonts/Roboto-Regular.ttf") format("truetype"); }
+  src: url("../../fonts/Roboto-Regular.ttf") format("truetype"); }
 /**
 *
 * Fonts Custom
@@ -720,6 +720,18 @@ html {
           padding: 5rem 0;
           display: flex;
           justify-content: space-between; }
+          html body #main-wrapper #main-content #chapters_list_home .row.row {
+            padding-bottom: 2rem; }
+        html body #main-wrapper #main-content #chapters_list_home .btn {
+          background-color: #248EB9;
+          border: #248EB9 2px solid;
+          padding: 0.5rem 0;
+          font-family: "RobotoBold", sans-serif;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+          html body #main-wrapper #main-content #chapters_list_home .btn:hover {
+            color: #248EB9;
+            background-color: #fff; }
       html body #main-wrapper #main-content.chapter_detail #highlighted, html body #main-wrapper #main-content.chapters_list #highlighted, html body #main-wrapper #main-content.connexion #highlighted {
         min-height: initial;
         height: 60vh; }
@@ -968,8 +980,8 @@ html {
               bottom: 3.5rem;
               left: 0;
               margin: 0;
-              padding: 1.5rem;
-              max-height: 168px;
+              padding: 1rem 1.5rem;
+              max-height: 170px;
               overflow: hidden;
               -webkit-transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
               transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
@@ -979,14 +991,18 @@ html {
               transform: translateY(25px); }
           html body #main-wrapper .chapter.chapter_mini .chapter_footer {
             position: absolute;
-            bottom: 1rem;
+            bottom: 1.5rem;
             right: 1.5rem;
             left: 1.5rem;
             font-size: 0.9rem;
-            color: #248EB9;
             z-index: 3; }
             html body #main-wrapper .chapter.chapter_mini .chapter_footer .icon_comments a {
-              font-size: 1rem; }
+              font-size: 1rem;
+              color: #fff;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+              html body #main-wrapper .chapter.chapter_mini .chapter_footer .icon_comments a:hover {
+                color: #248EB9; }
           html body #main-wrapper .chapter.chapter_mini:hover {
             -o-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);

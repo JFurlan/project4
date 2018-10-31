@@ -24,7 +24,6 @@ var backgroundMenu = $("#menu").outerHeight();
 
 window.onscroll = function () {
     menuBackground();
-    addCommentFixed();
 };
 
 function menuBackground(){
@@ -37,5 +36,19 @@ function menuBackground(){
 }
 
 
-/* Ajout commentaire - Position Fixed */
-
+/* TINYMCE Module - Start */
+tinymce.init({
+    selector: ".admin textarea",
+    plugins: [
+        "advlist autolink lists link  charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen emoticons",
+        "insertdatetime table contextmenu paste textcolor",
+    ],
+    toolbar: [
+        "undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify |,fontsize |,bullist |, numlist outdent indent |,forecolor"
+    ],
+    font_formats: ['Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n'],
+    force_p_newlines: true,
+    fontsize_formats: "8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt",
+});
+/* TINYMCE Module - End */
