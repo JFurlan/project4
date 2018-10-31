@@ -1,34 +1,44 @@
 <?php $title = 'Administration - Post'; ?>
 
 <?php ob_start(); ?>
-<?php require('view/backend/partials/navAdmin.php'); ?>
 
-<h1>Welcome <?= strtoupper($_SESSION['login']);  ?></h1>
+<!-- <h1>Welcome <?php //strtoupper($_SESSION['login']);  ?></h1> -->
 
-<?php foreach ($posts as $post) : ?>
-    <div class="news">
-        <h3>
-            <?= htmlspecialchars($post->getTitle()) ?>
-        </h3>
-        <p>
-            <em>le <?= $post->getCreationDate() ?></em>
-        </p>
-        <p>
-            <?= nl2br(htmlspecialchars($post->getContent())) ?>
-        </p>
-        <?php if($post->getPostImg()) : ?>
-            <div>
-                <p>Image de l'article : <a href="public/img/<?= $post->getPostImg() ; ?>" target="_blank"><?= $post->getPostImg() ; ?></a></p>
+<section id="main-content" class="admin ">
+    <section id="highlighted" style="background-image: url('public/img/alaska3.jpg')">
+        <div class="highlighted_img_opacity"></div>
+        <div id="highlighted_content">
+            <h1>Tous les articles</h1>
+            <h2>Administration</h2>
+        </div>
+    </section>
+    <section class="container">
+        <div class="admin_list"> 
+        <?php foreach ($posts as $post) : ?>
+        <?php 
+            $fullDate = $post->getCreationDate();
+            $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
+        ?>   
+            <div class="post bloc row justify-content-between">
+                <div class="col bloc_content">
+                    <h3 class="bloc_element"><?= htmlspecialchars($post->getTitle()) ?></h3>
+                    <h4 class="bloc_element"><?= htmlspecialchars($post->getSubTitle()) ?></h4>
+                    <p class="bloc_element"><em>Le <?= $date->format('d F Y'); ?></em></p>
+                    <p class="bloc_element content"><?= nl2br(htmlspecialchars($post->getContent())) ?></p>
+                </div> 
+                <div class="col-2 bloc_button row align-items-center no-gutters">
+                    <p>
+                        <a href="index.php?action=adminEditPost&id=<?= $post->getId() ?>" class="btn btn-success">Éditer</a>
+                    </p>
+                    <p>
+                        <a href="index.php?action=deletePost&id=<?= $post->getId() ?>" class="btn btn-danger">Supprimer</a>
+                    </p>
+                </div>
+                
             </div>
-        <?php endif; ?>
-        <p>
-            <a href="index.php?action=adminEditPost&id=<?= $post->getId() ?>" class="btn btn-success">Éditer</a>
-        </p>
-        <p>
-            <a href="index.php?action=deletePost&id=<?= $post->getId() ?>" class="btn btn-error">Supprimer</a>
-        </p>
+        <?php endforeach; ?>
     </div>
-<?php endforeach; ?>
+</section>
 
 <?php $content = ob_get_clean(); ?>
 

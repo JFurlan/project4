@@ -179,7 +179,7 @@ try{
         }
     } 
     else {
-        listPosts();
+        home();
     }
 } 
 

@@ -492,6 +492,30 @@ html {
                 transition: all 0.5s ease; }
               html body #main-wrapper #main-header #menu.background .container-fluid button:hover {
                 color: #248EB9; }
+        html body #main-wrapper #main-header.admin #menu .container-fluid ul {
+          width: 100%; }
+          html body #main-wrapper #main-header.admin #menu .container-fluid ul .admin_button_menu {
+            display: none; }
+          html body #main-wrapper #main-header.admin #menu .container-fluid ul li {
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease; }
+            html body #main-wrapper #main-header.admin #menu .container-fluid ul li:hover a {
+              color: #248EB9; }
+            html body #main-wrapper #main-header.admin #menu .container-fluid ul li:hover:before {
+              color: #0e3c54; }
+            html body #main-wrapper #main-header.admin #menu .container-fluid ul li a {
+              color: #fff;
+              font-size: 1rem;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+            html body #main-wrapper #main-header.admin #menu .container-fluid ul li:last-of-type a {
+              padding-right: 0; }
+            html body #main-wrapper #main-header.admin #menu .container-fluid ul li:before {
+              color: #fff;
+              padding-right: 0.5rem;
+              font-size: 1rem;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
       html body #main-wrapper #main-content .highlighted_img_opacity {
         position: absolute;
         top: 0;
@@ -696,28 +720,134 @@ html {
           padding: 5rem 0;
           display: flex;
           justify-content: space-between; }
-      html body #main-wrapper #main-content.chapter_detail #highlighted, html body #main-wrapper #main-content.chapters_list #highlighted {
+      html body #main-wrapper #main-content.chapter_detail #highlighted, html body #main-wrapper #main-content.chapters_list #highlighted, html body #main-wrapper #main-content.connexion #highlighted {
         min-height: initial;
-        height: 80vh; }
-        html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content h2, html body #main-wrapper #main-content.chapters_list #highlighted #highlighted_content h2 {
-          font-size: 2rem; }
-      html body #main-wrapper #main-content.chapter_detail #chapters_list .row, html body #main-wrapper #main-content.chapters_list #chapters_list .row {
+        height: 60vh; }
+        html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content, html body #main-wrapper #main-content.chapters_list #highlighted #highlighted_content, html body #main-wrapper #main-content.connexion #highlighted #highlighted_content {
+          padding-top: 84px; }
+          html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content h2, html body #main-wrapper #main-content.chapters_list #highlighted #highlighted_content h2, html body #main-wrapper #main-content.connexion #highlighted #highlighted_content h2 {
+            font-size: 2rem; }
+      html body #main-wrapper #main-content.chapter_detail #chapters_list .row, html body #main-wrapper #main-content.chapters_list #chapters_list .row, html body #main-wrapper #main-content.connexion #chapters_list .row {
         padding: 5rem 0;
         display: flex;
         justify-content: space-between; }
-      html body #main-wrapper #main-content.chapter_detail #comments, html body #main-wrapper #main-content.chapters_list #comments {
+      html body #main-wrapper #main-content.chapter_detail #comments, html body #main-wrapper #main-content.chapters_list #comments, html body #main-wrapper #main-content.connexion #comments {
         padding: 4rem;
         background-color: #0e3c54;
         position: relative; }
-        html body #main-wrapper #main-content.chapter_detail #comments header, html body #main-wrapper #main-content.chapters_list #comments header {
+        html body #main-wrapper #main-content.chapter_detail #comments header, html body #main-wrapper #main-content.chapters_list #comments header, html body #main-wrapper #main-content.connexion #comments header {
           text-align: center; }
-          html body #main-wrapper #main-content.chapter_detail #comments header h2, html body #main-wrapper #main-content.chapters_list #comments header h2 {
+          html body #main-wrapper #main-content.chapter_detail #comments header h2, html body #main-wrapper #main-content.chapters_list #comments header h2, html body #main-wrapper #main-content.connexion #comments header h2 {
             font-size: 2rem;
             padding-bottom: 2rem;
             margin-bottom: 4rem;
             display: inline-block;
             color: #fff;
             text-transform: uppercase; }
+      html body #main-wrapper #main-content.connexion {
+        min-height: calc(100vh - 66px); }
+        html body #main-wrapper #main-content.connexion .connexion_form {
+          padding: 3rem 0; }
+          html body #main-wrapper #main-content.connexion .connexion_form .input-group .input-group-prepend {
+            width: 25%; }
+            html body #main-wrapper #main-content.connexion .connexion_form .input-group .input-group-prepend span {
+              font-size: 0.9rem;
+              width: 100%;
+              background-color: #0e3c54;
+              color: #fff;
+              font-weight: bold;
+              border: 1px solid #0e3c54; }
+          html body #main-wrapper #main-content.connexion .connexion_form .input-group input {
+            border: 1px solid #0e3c54; }
+          html body #main-wrapper #main-content.connexion .connexion_form .button {
+            padding: 2rem 0; }
+            html body #main-wrapper #main-content.connexion .connexion_form .button .btn {
+              padding: 0.5rem 0;
+              background-color: #0e3c54;
+              border: 2px solid #0e3c54;
+              font-weight: bold;
+              text-transform: uppercase;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+              html body #main-wrapper #main-content.connexion .connexion_form .button .btn:hover {
+                background-color: #fff;
+                color: #0e3c54; }
+      html body #main-wrapper #main-content.admin #highlighted {
+        min-height: 50vh;
+        height: 50vh; }
+        html body #main-wrapper #main-content.admin #highlighted #highlighted_content {
+          padding-top: 5rem; }
+      html body #main-wrapper #main-content.admin .container .admin_list {
+        padding: 2rem 0; }
+        html body #main-wrapper #main-content.admin .container .admin_list p .type_comments {
+          font-size: 1rem;
+          color: #0e3c54;
+          font-family: "RobotoRegular", sans-serif;
+          padding: 0.5rem 3rem;
+          margin: 2rem 0 4rem 0;
+          position: relative;
+          border: 2px solid #0e3c54; }
+          html body #main-wrapper #main-content.admin .container .admin_list p .type_comments.showed {
+            color: #fff;
+            background-color: #0e3c54;
+            font-family: "RobotoBold", sans-serif; }
+        html body #main-wrapper #main-content.admin .container .admin_list p:first-child .type_comments {
+          margin-left: 0; }
+        html body #main-wrapper #main-content.admin .container .admin_list .bloc {
+          padding: 2rem 0;
+          border-top: 3px solid #0e3c54; }
+          html body #main-wrapper #main-content.admin .container .admin_list .bloc:first-of-type {
+            border-top: 3px solid transparent; }
+          html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_element {
+            padding: 0.5rem 0; }
+            html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_element.content {
+              max-height: 50px;
+              overflow: hidden;
+              word-break: break-word;
+              max-width: 100%; }
+          html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_button {
+            text-align: right; }
+            html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_button p {
+              display: inline-block;
+              width: 100%;
+              padding: 1rem 0; }
+              html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_button p a {
+                width: 100%; }
+      html body #main-wrapper #main-content.admin .container .admin_form form {
+        padding: 1rem 0; }
+        html body #main-wrapper #main-content.admin .container .admin_form form .form_field {
+          padding: 1.5rem 0; }
+          html body #main-wrapper #main-content.admin .container .admin_form form .form_field .label_field {
+            font-size: 1rem;
+            padding-bottom: 1rem; }
+            html body #main-wrapper #main-content.admin .container .admin_form form .form_field .label_field + .label_field {
+              font-size: 0.9rem; }
+          html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn {
+            margin: 1rem;
+            width: 20%;
+            font-weight: bold; }
+            html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn.btn-success {
+              background-color: #248EB9;
+              border: 2px solid #248EB9;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+              html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn.btn-success:hover {
+                background-color: #fff;
+                color: #248EB9; }
+            html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn.btn-danger {
+              background-color: #ff7700;
+              border: 2px solid #ff7700;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+              html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn.btn-danger a {
+                color: #fff;
+                font-weight: bold;
+                -webkit-transition: all 0.5s ease;
+                transition: all 0.5s ease; }
+              html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn.btn-danger:hover {
+                background-color: #fff; }
+                html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn.btn-danger:hover a {
+                  color: #ff7700; }
       html body #main-wrapper #main-footer {
         background-color: #0e3c54;
         border-top: 1px solid #fff;
@@ -943,6 +1073,11 @@ html {
     -moz-text-shadow: 0px 5px 5px rgba(0, 0, 0, 0);
     -webkit-text-shadow: 0px 5px 5px rgba(0, 0, 0, 0);
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0); } }
+      html body #main-wrapper .bloc_comments_details > p {
+        font-size: 1rem;
+        color: #fff;
+        font-weight: bold;
+        padding-top: 2rem; }
       html body #main-wrapper .bloc_comments_details .comments_details {
         position: relative;
         padding: 2rem;
@@ -965,11 +1100,14 @@ html {
           top: -2rem;
           background-color: #0e3c54;
           border: 2px solid #fff;
-          padding: 0 1rem; }
+          padding: 0 1rem;
+          max-width: 85%; }
           html body #main-wrapper .bloc_comments_details .comments_details .comments_pseudo p {
             color: #fff;
             font-weight: bold;
-            font-size: 1rem; }
+            font-size: 1rem;
+            overflow: hidden;
+            word-break: break-word; }
         html body #main-wrapper .bloc_comments_details .comments_details .comments_statut {
           font-family: "RobotoRegular", sans-serif; }
           html body #main-wrapper .bloc_comments_details .comments_details .comments_statut:before {
@@ -980,9 +1118,9 @@ html {
             color: #47B03F; }
             html body #main-wrapper .bloc_comments_details .comments_details .comments_statut.publish:before {
               color: inherit; }
-          html body #main-wrapper .bloc_comments_details .comments_details .comments_statut.signaled {
+          html body #main-wrapper .bloc_comments_details .comments_details .comments_statut.reported {
             color: #BF1405; }
-            html body #main-wrapper .bloc_comments_details .comments_details .comments_statut.signaled:before {
+            html body #main-wrapper .bloc_comments_details .comments_details .comments_statut.reported:before {
               color: inherit; }
         html body #main-wrapper .bloc_comments_details .comments_details .comments_creation p {
           font-weight: normal; }
@@ -996,12 +1134,13 @@ html {
             width: 10%; }
           html body #main-wrapper .bloc_comments_details .comments_details .comments_content p {
             font-size: 1rem;
-            padding: 1.5rem 0 0 0; }
-        html body #main-wrapper .bloc_comments_details .comments_details .comments_signalment {
+            padding: 1.5rem 0 0 0;
+            word-break: break-word; }
+        html body #main-wrapper .bloc_comments_details .comments_details .comments_reported {
           position: absolute;
           top: -1rem;
           right: -1rem; }
-          html body #main-wrapper .bloc_comments_details .comments_details .comments_signalment .comment_signal {
+          html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal {
             position: relative;
             border: #0e3c54;
             -o-border-radius: 50%;
@@ -1015,7 +1154,7 @@ html {
             cursor: pointer;
             -webkit-transition: background-color 0.5s ease;
             transition: background-color 0.5s ease; }
-            html body #main-wrapper .bloc_comments_details .comments_details .comments_signalment .comment_signal:before {
+            html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal:before {
               position: absolute;
               display: inline-block;
               text-align: center;
@@ -1033,7 +1172,7 @@ html {
               -moz-border-radius: 50%;
               -webkit-border-radius: 50%;
               border-radius: 50%; }
-            html body #main-wrapper .bloc_comments_details .comments_details .comments_signalment .comment_signal:hover {
+            html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal.reported, html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal:hover {
               background-color: #BF1405; }
       html body #main-wrapper .bloc_comments_add {
         position: relative; }

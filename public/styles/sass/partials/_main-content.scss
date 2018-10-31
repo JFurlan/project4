@@ -140,11 +140,13 @@
         }
     }
     &.chapter_detail,
-    &.chapters_list {
+    &.chapters_list, 
+    &.connexion {
         #highlighted{
             min-height: initial;
-            height: 80vh;
+            height: 60vh;
             #highlighted_content{
+                padding-top: 84px;
                 h2{
                     font-size: 2rem;
                 }
@@ -172,6 +174,43 @@
                     display: inline-block;
                     color: $white;
                     text-transform: uppercase;
+                }
+            }
+        }
+    }
+    &.connexion{
+        min-height: calc(100vh - 66px);
+        .connexion_form{
+            padding: 3rem 0;
+            .input-group {
+                .input-group-prepend{
+                    width: 25%;
+                    span{
+                        font-size: 0.9rem;
+                        width: 100%;
+                        background-color: $blueDark;
+                        color: $white;
+                        font-weight: bold;
+                        border: 1px solid $blueDark;
+                    }
+                }
+                input{
+                    border: 1px solid $blueDark;
+                }
+            }
+            .button{
+                padding: 2rem 0;
+                .btn{
+                    padding: 0.5rem 0;
+                    background-color: $blueDark;
+                    border: 2px solid $blueDark;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    @include transition(all 0.5s ease);
+                    &:hover{
+                        background-color: $white;
+                        color: $blueDark;
+                    }
                 }
             }
         }

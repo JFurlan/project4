@@ -6,6 +6,7 @@ class Post {
 
     protected $_id;
     protected $_title;
+    protected $_subtitle;
     protected $_content;
     protected $_creationDate;
     protected $_postImg;
@@ -36,6 +37,11 @@ class Post {
      public function getTitle()
      {
          return $this->_title;
+     }
+     
+     public function getSubTitle()
+     {
+         return $this->_subtitle;
      }
 
      public function getContent()
@@ -71,6 +77,14 @@ class Post {
         if(is_string($title))
         {
             $this->_title = $title;
+        }
+     }
+
+     public function setSubTitle($subtitle)
+     {
+        if(is_string($subtitle))
+        {
+            $this->_subtitle = $subtitle;
         }
      }
 

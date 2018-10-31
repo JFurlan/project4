@@ -1,0 +1,109 @@
+#main-content {
+    &.admin{
+        #highlighted{
+            min-height: 50vh;
+            height:50vh;
+            #highlighted_content{
+                padding-top: 5rem;
+            }
+        }
+        .container{
+            .admin_list{
+                padding: 2rem 0;
+                p{
+                    .type_comments {
+                        font-size: 1rem;
+                        color: $blueDark;
+                        font-family: $RobotoRegular;
+                        padding: 0.5rem 3rem;
+                        margin: 2rem 0 4rem 0;
+                        position: relative;
+                        border: 2px solid $blueDark;
+                        &.showed {
+                            color: $white;
+                            background-color: $blueDark;
+                            font-family: $RobotoBold;
+                        }
+                    }
+                    &:first-child {
+                        .type_comments{
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .bloc{
+                    padding: 2rem 0;
+                    border-top: 3px solid $blueDark;
+                    &:first-of-type{
+                        border-top: 3px solid transparent;
+                    }
+                    .bloc_element{
+                        padding: 0.5rem 0;
+                        &.content{
+                            max-height: 50px;
+                            overflow: hidden;
+                            word-break: break-word;
+                            max-width: 100%;
+                        }
+                    }
+                    .bloc_button{
+                        text-align: right;
+                        p{
+                            display: inline-block;
+                            width: 100%;
+                            padding: 1rem 0;
+                            a{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .admin_form{
+                form{
+                    padding: 1rem 0;
+                    .form_field{
+                        padding: 1.5rem 0;
+                        .label_field{
+                            font-size: 1rem;
+                            padding-bottom: 1rem;
+                            &+.label_field{
+                                font-size: 0.9rem;
+                            }
+                        }
+                        .btn{
+                            margin: 1rem;
+                            width: 20%;
+                            font-weight: bold;
+                            &.btn-success{
+                                background-color: $blueLight;
+                                border: 2px solid $blueLight;
+                                @include transition(all 0.5s ease);
+                                &:hover{
+                                    background-color: $white;
+                                    color: $blueLight;
+                                }
+                            }
+                            &.btn-danger {
+                                background-color: $orangeDark;
+                                border: 2px solid $orangeDark;
+                                @include transition(all 0.5s ease);
+                                a{
+                                    color: $white;
+                                    font-weight: bold;
+                                    @include transition(all 0.5s ease);
+                                }
+                                &:hover{
+                                    background-color: $white;
+                                    a{
+                                        color: $orangeDark;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

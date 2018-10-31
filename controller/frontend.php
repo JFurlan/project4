@@ -7,14 +7,22 @@
 // require_once('model/CommentManager.php'); 
 
 /**
+ * Function = récupération de tous les posts pour la Home
+ */
+function home(){
+
+    $postManager = new PostManager();
+    $posts = $postManager->getPostsHome();
+    require('view/frontend/homeView.php');
+}
+
+/**
  * Function = récupération de tous les posts
  */
 function listPosts(){
 
     $postManager = new PostManager();
-
     $posts = $postManager->getPosts();
-    
     require('view/frontend/listPostsView.php');
 }
 
@@ -42,7 +50,8 @@ function post(){
 function addComment($postId, $author, $comment){
 
     $commentManager = new CommentManager();
-
+    $author = htmlspecialchars($author);
+    $comment = htmlspecialchars($comment);
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {

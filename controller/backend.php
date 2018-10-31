@@ -31,6 +31,7 @@ function addPost(){
     $newPost = new Post;
     $newPost->setId($_POST['id']);
     $newPost->setTitle($_POST['title']);
+    $newPost->setSubTitle($_POST['subtitle']);
     $newPost->setContent($_POST['content']);
     $newPost->setCreationDate(date("Y-m-d"));
     if(!$_FILES['postImg']['error']){
@@ -38,7 +39,7 @@ function addPost(){
     }
     $manager = new PostManager;
     $manager->addPost($newPost);
-    require('view/backend/adminPost.php');
+    //require('view/backend/adminPost.php');
     header("Refresh: 3; URL=index.php?action=adminHome");
     throw new Exception('L\'article a bien été créé. <br>Vous allez être redirigé vers la Home de l\'administration.');
 }
@@ -53,10 +54,10 @@ function adminEditPost(){
     $post = $manager->getPost($id);
     $_id = $post->getId();
     $_title = $post->getTitle();
+    $_subtitle = $post->getSubTitle();
     $_content = $post->getContent();
     $_creationDate = $post->getCreationDate();
     $_postImg = $post->getPostImg();
-    //var_dump($post);
     require('view/backend/adminPost.php');
 }
 
@@ -67,6 +68,7 @@ function updatePost(){
     $updatedPost = new Post;
     $updatedPost->setId($_POST['id']);
     $updatedPost->setTitle($_POST['title']);
+    $updatedPost->setSubTitle($_POST['subtitle']);
     $updatedPost->setContent($_POST['content']);
     $updatedPost->setCreationDate($_POST['creationDate']);
     if(!$_FILES['postImg']['error']){
@@ -78,8 +80,8 @@ function updatePost(){
     }
     $manager = new PostManager;
     $manager->updatePost($updatedPost);
-    require('view/backend/adminPost.php');
-    header("Refresh: 3; URL=index.php?action=adminHome");
+    //require('view/backend/adminPost.php');
+    header("Refresh: 1; URL=index.php?action=adminHome");
     throw new Exception('Les informations de l\'article ont bien été modifiées. <br>Vous allez être redirigé vers la Home de l\'administration.');
 }
 
@@ -89,7 +91,7 @@ function updatePost(){
 function deletePost(){
     $postId = $_GET['id'];
     $manager = new PostManager();
-    $manager->delete($postId);
+    $manager->deletePost($postId);
     header("Refresh: 3; URL=index.php?action=adminHome");
     throw new Exception('Votre post a bien été supprimé. <br>Vous allez être redirigé vers la Home de l\'administration.');
 }
@@ -124,6 +126,7 @@ function uploadImage(){
 function adminComments(){
     $commentsManager = new CommentManager();
     $comments = $commentsManager->getListComments();
+    $commentsReported = false;
     require('view/backend/adminComments.php');
 }
 
@@ -134,6 +137,7 @@ function adminComments(){
 function adminCommentsReported(){
     $commentsManager = new CommentManager();
     $comments = $commentsManager->getListReported();
+    $commentsReported = true;
     require('view/backend/adminComments.php');
 }
 

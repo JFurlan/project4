@@ -5,6 +5,12 @@
 **/
 
 .bloc_comments_details{
+    &>p{
+        font-size: 1rem;
+        color: $white;
+        font-weight: bold;
+        padding-top: 2rem;
+    }
     .comments_details {
         position: relative;
         padding: 2rem;
@@ -26,10 +32,13 @@
             background-color: $blueDark;
             border: 2px solid $white;
             padding: 0 1rem;
+            max-width: 85%;
             p {
                 color: $white;
                 font-weight: bold;
                 font-size: 1rem;
+                overflow: hidden;
+                word-break: break-word;
             }
         }
         .comments_statut {
@@ -45,7 +54,7 @@
                     color: inherit;
                 }
             }
-            &.signaled {
+            &.reported {
                 color: $redDark;
                 &:before {
                     color: inherit;
@@ -67,9 +76,10 @@
             p {
                 font-size: 1rem;
                 padding: 1.5rem 0 0 0;
+                word-break: break-word;
             }
         }
-        .comments_signalment {
+        .comments_reported {
             position: absolute;
             top: -1rem;
             right: -1rem;
@@ -96,7 +106,7 @@
                     border: $blueDark;
                     @include border-radius(50%);
                 }
-                &:hover {
+                &.reported, &:hover {
                     background-color: $redDark;
                 }
             }
