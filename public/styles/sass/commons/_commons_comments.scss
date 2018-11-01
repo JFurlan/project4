@@ -19,7 +19,7 @@
         border: 2px solid $blueDark;
         @include border-radius(5px);
         p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: $blueDark;
             padding: 0.5rem 0;
             font-weight: bold;
@@ -49,7 +49,7 @@
                 font-family: 'Font Awesome\ 5 Free';
             }
             &.publish {
-                color: $greenDark;
+                color: $blueLight;
                 &:before {
                     color: inherit;
                 }

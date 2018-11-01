@@ -70,37 +70,46 @@
     &.admin{
         #menu{
             .container-fluid{
-                ul{
+                .row{
+                    flex-wrap: nowrap;
                     width: 100%;
-                    
-                    .admin_button_menu{
-                        display: none;
+                    a{
+                        //font-size: 1.2rem;
                     }
-                    li{
-                        @include transition(all 0.5s ease);
-                        &:hover {
-                            a{
-                                color: $blueLight;
+                    ul {
+                        width: 100%;
+                        .admin_button_menu {
+                            display: none;
+                        }
+                        li {
+                            @include transition(all 0.5s ease);
+                            &+li{
+                                margin-left: 2.5rem;
+                            }
+                            &:hover {
+                                a {
+                                    color: $blueLight;
+                                }
+                                &:before {
+                                    color: $blueDark;
+                                }
+                            }
+                            a {
+                                color: $white;
+                                font-size: 1rem;
+                                @include transition(all 0.5s ease);
+                            }
+                            &:last-of-type {
+                                a {
+                                    padding-right: 0;
+                                }
                             }
                             &:before {
-                                color: $blueDark;
+                                color: $white;
+                                padding-right: 0.25rem;
+                                font-size: 1rem;
+                                @include transition(all 0.5s ease);
                             }
-                        }
-                        a{
-                            color: $white;
-                            font-size: 1rem;
-                            @include transition(all 0.5s ease);
-                        }
-                        &:last-of-type{
-                            a{
-                                padding-right: 0;
-                            }
-                        }
-                        &:before{
-                            color: $white;
-                            padding-right: 0.5rem;
-                            font-size: 1rem;
-                            @include transition(all 0.5s ease);
                         }
                     }
                 }

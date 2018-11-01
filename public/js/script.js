@@ -35,7 +35,6 @@ function menuBackground(){
     }
 }
 
-
 /* TINYMCE Module - Start */
 tinymce.init({
     selector: ".admin textarea",

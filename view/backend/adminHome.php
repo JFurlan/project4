@@ -20,13 +20,13 @@
             $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
         ?>   
             <div class="post bloc row justify-content-between">
-                <div class="col bloc_content">
+                <div class="col-12 col-sm-10 bloc_content">
                     <h3 class="bloc_element"><?= htmlspecialchars($post->getTitle()) ?></h3>
                     <h4 class="bloc_element"><?= htmlspecialchars($post->getSubTitle()) ?></h4>
                     <p class="bloc_element"><em>Le <?= $date->format('d/m/Y'); ?></em></p>
                     <div class="bloc_element content"><?= nl2br($post->getContent()) ?></div>
                 </div> 
-                <div class="col-2 bloc_button row align-items-center no-gutters">
+                <div class="col-12 col-sm-2 bloc_button row align-items-center no-gutters">
                     <p>
                         <a href="index.php?action=adminEditPost&id=<?= $post->getId() ?>" class="btn btn-success">Éditer</a>
                     </p>

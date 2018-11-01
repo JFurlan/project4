@@ -61,7 +61,7 @@
                                     <p><?= nl2br(htmlspecialchars($comment->getComment())) ?></p>
                                 </div>
                                 <div class="comments_reported">
-                                    <a href="index.php?action=report&id=<?= $post->getId(); ?>&commentId=<?= $comment->getId(); ?>" class="comment_signal far fa-bookmark <?= ($comment->getStatut() == 0) ? "publish" : "reported" ; ?>"></a>
+                                    <a title="Signaler le commentaire" href="index.php?action=report&id=<?= $post->getId(); ?>&commentId=<?= $comment->getId(); ?>" class="comment_signal far fa-bookmark <?= ($comment->getStatut() == 0) ? "publish" : "reported" ; ?>"></a>
                                 </div>
                             </aside>
                         <?php endforeach; ?> 

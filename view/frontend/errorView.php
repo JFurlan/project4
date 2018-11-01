@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Mon blog</title>
-        <link href="style.css" rel="stylesheet" /> 
-    </head>
-        
-    <body>
-        <h1>Mon super blog !</h1>
-        <p><a href="index.php">Retour à la liste des billets</a></p>
+<?php $title = "Error - Jean Forteroche"; ?>
 
-        <div class="">
-            <h3>
-                <?= 'Erreur : ' . $e->getMessage(); ?>
-            </h3>
+<?php ob_start(); ?>
 
+<section id="main-content" class="message">
+    <section id="highlighted" style="background-image: url('public/img/alaska3.jpg')">
+        <div class="highlighted_img_opacity"></div>
+        <div id="highlighted_content">
+            <h3><?= $e->getMessage(); ?></h3>
         </div>
+    </section>
+    
+</section>    
 
-    </body>
-</html>
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>

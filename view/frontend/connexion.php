@@ -10,7 +10,7 @@
         </div>
     </section>
     <section class="connexion_form container">
-        <form action="index.php?action=verifAdmin" method="post" class="offset-3 col-6">
+        <form action="index.php?action=verifAdmin" method="post" class="col-12 offset-sm-3 col-sm-6">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Identifiant</span>

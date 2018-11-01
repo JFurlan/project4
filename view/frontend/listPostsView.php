@@ -17,31 +17,33 @@
                     $fullDate = $post->getCreationDate();
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
                 ?>
-                <article class="chapter chapter_mini col-md-5">
-                    <header class="chapter_thumb">
-                        <a href="index.php?action=post&id=<?= $post->getId(); ?>">
-                            <img src="public/img/<?= $post->getPostImg(); ?>">
-                        </a>
-                    </header>
-                    <section class="chapter_date">
-                        <span class="chapter_date_day"><?= $date->format('d'); ?></span>
-                        <span class="chapter_date_month"><?= $date->format('M'); ?></span>
-                    </section>
-                    <section class="chapter_body">
-                        <h3 class="chapter_title">
-                            <a href="index.php?action=post&id=<?= $post->getId(); ?>"><?= $post->getTitle() ?></a>
-                        </h3>
-                        <h4 class="chapter_subtitle"><?= $post->getSubTitle() ?></h4>
-                        <div class="chapter_description">
-                            <?= nl2br($post->getContent()) ?>
-                        </div>
-                    </section>
-                    <footer class="chapter_footer">
-                        <span class="icon icon_comments">
-                            <a href="index.php?action=post&id=<?= $post->getId(); ?>"></i>Découvrir le chapitre</a>
-                        </span>
-                    </footer>
-                </article>
+                <div class="col-12 col-sm-6">
+                    <article class="chapter chapter_mini">
+                        <header class="chapter_thumb">
+                            <a href="index.php?action=post&id=<?= $post->getId(); ?>">
+                                <img src="public/img/<?= $post->getPostImg(); ?>">
+                            </a>
+                        </header>
+                        <section class="chapter_date">
+                            <span class="chapter_date_day"><?= $date->format('d'); ?></span>
+                            <span class="chapter_date_month"><?= $date->format('M'); ?></span>
+                        </section>
+                        <section class="chapter_body">
+                            <h3 class="chapter_title">
+                                <a href="index.php?action=post&id=<?= $post->getId(); ?>"><?= $post->getTitle() ?></a>
+                            </h3>
+                            <h4 class="chapter_subtitle"><?= $post->getSubTitle() ?></h4>
+                            <div class="chapter_description">
+                                <?= nl2br($post->getContent()) ?>
+                            </div>
+                        </section>
+                        <footer class="chapter_footer">
+                            <span class="icon icon_comments">
+                                <a href="index.php?action=post&id=<?= $post->getId(); ?>"></i>Découvrir le chapitre</a>
+                            </span>
+                        </footer>
+                    </article>
+                </div>    
                 <?php endforeach; ?>
             </div>
         </div>

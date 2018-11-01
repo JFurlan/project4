@@ -39,11 +39,25 @@
                     }
                     .bloc_element{
                         padding: 0.5rem 0;
+                        em{
+                            font-size: 1rem;
+                        }
                         &.content{
                             max-height: 50px;
+                            font-size: 1rem;
                             overflow: hidden;
                             word-break: break-word;
                             max-width: 100%;
+                        }
+                        &.reported,
+                        &.publish {
+                            font-family: $RobotoBold;
+                        }
+                        &.reported{
+                            color: $redDark;
+                        }
+                        &.publish{
+                            color: $blueLight;
                         }
                     }
                     .bloc_button{
@@ -54,6 +68,32 @@
                             padding: 1rem 0;
                             a{
                                 width: 100%;
+                                font-family: $RobotoBold;
+                                &.btn-success{
+                                    background-color: $blueLight;
+                                    border: 2px solid $blueLight;
+                                    &:hover{
+                                        color: $blueLight;
+                                        background-color: $white;
+                                    }
+                                }
+                                &.btn-danger {
+                                    background-color: $redDark;
+                                    border: 2px solid $redDark;
+                                    &:hover {
+                                        color: $redDark;
+                                        background-color: $white;
+                                    }
+                                }
+                                &.btn-warning {
+                                    background-color: $blueDark;
+                                    border: 2px solid $blueDark;
+                                    color: $white;
+                                    &:hover {
+                                        color: $blueDark;
+                                        background-color: $white;
+                                    }
+                                }
                             }
                         }
                     }
@@ -91,6 +131,7 @@
                                 a{
                                     color: $white;
                                     font-weight: bold;
+                                    width: 100%;
                                     @include transition(all 0.5s ease);
                                 }
                                 &:hover{

@@ -85,7 +85,7 @@ function verifConnexion(){
         $connected = $manager->checkUser($login, $password);
         if($connected === null){
             header("Refresh: 3; URL=index.php?action=connect");
-            throw new Exception('Votre identifiant et/ou votre mot de passe sont incorrects.');
+            throw new Exception('Votre identifiant et/ou votre mot de passe sont incorrects.<br><br>Réessayez.');
         }
         else{
             $_SESSION['login'] = $login;
@@ -105,6 +105,5 @@ function reportingComment(){
     $commentsManager = new CommentManager();
     $commentsManager->reportingComment($commentId);
     header('Refresh: 1; URL=index.php?action=post&id=' . $postId);
-    //echo "<p>Le commentaire a bien été signalé. </p>";
     throw new Exception('Le commentaire a bien été signalé. ');
 }

@@ -47,7 +47,8 @@
                     $fullDate = $post->getCreationDate();
                     $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
                 ?>
-                    <article class="chapter chapter_mini col-md-5">
+                <div class="col-12 col-sm-6">
+                    <article class="chapter chapter_mini">
                         <header class="chapter_thumb">
                             <a href="index.php?action=post&id=<?= $post->getId(); ?>">
                                 <img src="public/img/<?= $post->getPostImg(); ?>">
@@ -72,6 +73,7 @@
                             </span>
                         </footer>
                     </article>
+                </div>
                 <?php endforeach; ?>    
             </div>
         </div>

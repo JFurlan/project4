@@ -4,9 +4,6 @@
         <li class="fas fa-home">
             <a href="index.php">Accueil</a>
         </li>
-        <!-- <li class="fas fa-user-secret">
-            <a href="#">L'auteur</a>
-        </li> -->
         <li class="fas fa-plane">
             <a href="index.php?action=listPosts">Les chapitres</a>
         </li>

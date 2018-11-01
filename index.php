@@ -29,7 +29,7 @@ try{
             } else {
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
                 header("Refresh: 3; URL=index.php");                
-                throw new Exception('Aucun identifiant de billet envoyé. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Aucun identifiant de billet envoyé. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
 
@@ -48,7 +48,7 @@ try{
             } 
             else {
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Aucun identifiant de billet envoyé. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Aucun identifiant de billet envoyé. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
 
@@ -59,7 +59,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Aucun identifiant de commentaire envoyé. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Aucun identifiant de commentaire envoyé. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
 
@@ -84,7 +84,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'adminNewPost') {
@@ -93,7 +93,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'addPost') {
@@ -102,7 +102,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'adminEditPost') {
@@ -111,7 +111,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'updatePost') {
@@ -120,7 +120,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'deletePost') {
@@ -129,7 +129,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'adminComments') {
@@ -138,7 +138,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'adminCommentsReported') {
@@ -147,7 +147,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'deleteComment') {
@@ -156,7 +156,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'cancelReport') {
@@ -165,7 +165,7 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
         }
         elseif ($_GET['action'] == 'deconnexion') {
@@ -174,8 +174,12 @@ try{
             }
             else{
                 header("Refresh: 3; URL=index.php");
-                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br>Vous allez être redirigé vers la Home.');
+                throw new Exception('Vous ne possédez pas les droits d\'accès à cette page. <br><br>Vous allez être redirigé vers la Home.');
             }
+        }
+        else {
+            header("Refresh: 3; URL=index.php");
+                throw new Exception('La page demandée n\'existe pas.');
         }
     } 
     else {

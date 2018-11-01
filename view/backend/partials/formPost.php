@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="form_field col-12 row justify-content-md-center no-gutters">
-        <button type="submit" class="btn btn-success">Envoyer</button>
+        <button type="submit" class="btn btn-success">Valider</button>
         <button type="button" class="btn btn-danger"><a href="index.php?action=adminHome">Annuler</a></button>
     </div>
     
