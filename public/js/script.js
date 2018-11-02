@@ -51,3 +51,11 @@ tinymce.init({
     fontsize_formats: "8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt",
 });
 /* TINYMCE Module - End */
+
+
+$('a.spin').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top -= 0
+    }, 1000, 'swing');
+});

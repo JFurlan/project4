@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <section id="main-content">
-    <section id="highlighted">
+    <section id="highlighted" class="col-12">
         <div class="highlighted_img_opacity"></div>
         <div id="highlighted_content">
             <h1>Billet simple pour l'alaska</h1>
@@ -17,28 +17,26 @@
             </div>
         </div>
     </section>
-    <section id="author_informations">
+    <section id="author_informations" class="col-12">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-5">
-                    <div class="author_photo_box">
+                <div class="col-12 col-md-4 col-lg-5">
+                    <div class="author_photo_box ">
                         <div class="author_photo"></div>
                     </div>
                 </div>
-                <div class="col-12 author_description col-md-7">
+                <div class="author_description col-12 col-md-8 col-lg-7 ">
                     <h2 class="author_description_title title_decoration">À propos de l'auteur</h2>
                     <div class="author_description_content" >
                         <p>Some informations about the author Some informations about the author Some informations about the author Some informations
                         about the author Some informations about the author Some informations about the author Some informations about the author
-                        Some informations about the author Some informations about the author Some informations about the author Some informations
-                        about the authorSome informations about the author Some informations about the author Some informations about the author
-                        Some informations about the author v v v Some informations about the author Some informations about the author.</p>
+                        Some informations about the author Some informations about the author Some informations about the author</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="chapters_list_home" >                 
+    <section id="chapters_list_home" class="col-12">                 
         <div class="container">
             <h2 class="title_decoration title_decoration_center">L'histoire commence ici</h2>
             <div class="row">
@@ -77,8 +75,8 @@
                 <?php endforeach; ?>    
             </div>
         </div>
-        <div class="all_chapters row justify-content-md-center ">
-            <a href="index.php?action=listPosts" class="btn btn-success col-3">Voir tous les chapitres</a>
+        <div class="all_chapters justify-content-md-center">
+            <a href="index.php?action=listPosts" class="btn btn-success col-8 col-md-3">Voir tous les chapitres</a>
         </div>
     </section> 
 </section>

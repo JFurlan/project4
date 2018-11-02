@@ -8,7 +8,11 @@
             <a href="index.php?action=listPosts">Les chapitres</a>
         </li>
         <li class="fas fa-sign-in-alt">
-            <a href="index.php?action=connect">Connexion</a>
+            <?php if(!isset($_SESSION['login'])) : ?>
+                <a href="index.php?action=connect">Connexion</a>
+            <?php else : ?>    
+                <a href="index.php?action=adminHome">Administration</a>
+            <?php endif; ?>        
         </li>
     </ul>
 </div>

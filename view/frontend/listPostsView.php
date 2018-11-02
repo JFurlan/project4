@@ -2,14 +2,14 @@
 
 <?php ob_start(); ?>
 
-<section id="main-content" class="chapters_list">
-    <section id="highlighted">
+<section id="main-content" class="chapters_page">
+    <section id="highlighted" class="col-12">
         <div class="highlighted_img_opacity"></div>
         <div id="highlighted_content">
             <h1>Liste des chapitres</h1>
         </div>
     </section>
-    <section id="chapters_list">
+    <section id="chapters_list" class="col-12">
         <div class="container">
             <div class="row">
                 <?php foreach ($posts as $post) : ?>

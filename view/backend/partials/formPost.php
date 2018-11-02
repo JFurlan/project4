@@ -18,14 +18,14 @@
         <input type="hidden" class="form-control" id="subtitle" name="creationDate" type="date" placeholder="Date" required value="<?php if (isset($_creationDate)) echo($_creationDate); ?>">
     </div>
     <div class="form_field row justify-content-md-center">
-        <div class="col-6">
+        <div class="col-12 col-sm-6">
             <label class="label_field">Image associée :</label>
             <?php if (isset($_postImg)) : ?>
                 <img style="width: 100%; height: 200px;" src="public/img/<?= $_postImg; ?>" alt="">
             <?php endif; ?>
             <input class="form-control" name="img" placeholder="Aucune image associée" value="<?php if(isset($_postImg)){ echo($_postImg); }; ?>">
         </div>
-        <div class="col-6">
+        <div class="col-12 col-sm-6">
             <p class="label_field">Ajoutez une nouvelle image :</p>
             <label class="label_field">Taille maximale : 1mo</label>
             <input type="hidden" name="MAX_FILE_SIZE" value="1000000">

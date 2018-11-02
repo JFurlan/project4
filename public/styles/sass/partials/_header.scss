@@ -36,6 +36,7 @@
                     &:before {
                         padding: $padding_menu_container_button_after;
                         font-family: 'Font Awesome\ 5 Free';
+                        @include transition(all 0.5s ease);
                     }
                 }
                 &:hover{
@@ -56,10 +57,14 @@
                     @include transition(all 0.5s ease);
                 }
                 .author_name{
-                    opacity: 0;
                     @include transition(all 0.5s ease);
                 }
                 button{
+                    span{
+                        &:before{
+                            @include transition(all 0.5s ease);                    
+                        }
+                    }
                     &:hover{
                         color: $blueLight;
                     }
@@ -111,6 +116,9 @@
                                 @include transition(all 0.5s ease);
                             }
                         }
+                    }
+                    .admin_button_menu{
+                        display: none;
                     }
                 }
             }

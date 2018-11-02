@@ -15,10 +15,10 @@
         $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
     ?>
     <section class="chapter_description container">
-        <article class="chapter chapter_full">
+        <article class="chapter chapter_full col-12">
             <section class="chapter_body">
                 <div class="chapter_body_head">
-                    <div class="chapter_body_date_creation">Publié le <?= $date->format('d/m/Y'); ?></div>
+                    <div class="chapter_body_date_creation">Posté le <?= $date->format('d/m/Y'); ?></div>
                     <span class="icon icon_comments">
                         <a href="#comments">
                             <i class="far fa-comment-dots"></i>

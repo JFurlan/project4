@@ -75,6 +75,7 @@
         .container{
             .row{
                 padding: 6rem 0;
+                align-items: center;
                 .author_photo_box{
                     padding: 0;
                     max-width: 300px;
@@ -116,9 +117,9 @@
         text-align: center;
         background-color: $white;
         padding: 6rem 0;
-        //background: url(../../assets/img/alaska5.jpg) no-repeat center center;
-        //background-size: cover;
-        //background-attachment: fixed;
+        // background: url(../../img/alaska5.jpg) no-repeat center center;
+        // background-size: cover;
+        // background-attachment: fixed;
         background-color: $white;
         h2{
             text-align: center;
@@ -153,7 +154,7 @@
         }
     }
     &.chapter_detail,
-    &.chapters_list, 
+    &.chapters_page, 
     &.connexion {
         #highlighted{
             min-height: initial;

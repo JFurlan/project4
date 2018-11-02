@@ -469,7 +469,9 @@ html {
                 font-family: 'RobotoMedium',sans-serif; }
                 html body #main-wrapper #main-header #menu .container-fluid button span:before {
                   padding: 0 1rem 0 0;
-                  font-family: 'Font Awesome\ 5 Free'; }
+                  font-family: 'Font Awesome\ 5 Free';
+                  -webkit-transition: all 0.5s ease;
+                  transition: all 0.5s ease; }
               html body #main-wrapper #main-header #menu .container-fluid button:hover {
                 color: #248EB9; }
           html body #main-wrapper #main-header #menu.background {
@@ -487,7 +489,9 @@ html {
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease; }
               html body #main-wrapper #main-header #menu.background .container-fluid .author_name {
-                opacity: 0;
+                -webkit-transition: all 0.5s ease;
+                transition: all 0.5s ease; }
+              html body #main-wrapper #main-header #menu.background .container-fluid button span:before {
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease; }
               html body #main-wrapper #main-header #menu.background .container-fluid button:hover {
@@ -521,6 +525,8 @@ html {
                 font-size: 1rem;
                 -webkit-transition: all 0.5s ease;
                 transition: all 0.5s ease; }
+          html body #main-wrapper #main-header.admin #menu .container-fluid .row .admin_button_menu {
+            display: none; }
       html body #main-wrapper #main-content .highlighted_img_opacity {
         position: absolute;
         top: 0;
@@ -666,7 +672,8 @@ html {
       html body #main-wrapper #main-content #author_informations {
         background-color: #0e3c54; }
         html body #main-wrapper #main-content #author_informations .container .row {
-          padding: 6rem 0; }
+          padding: 6rem 0;
+          align-items: center; }
           html body #main-wrapper #main-content #author_informations .container .row .author_photo_box {
             padding: 0;
             max-width: 300px;
@@ -737,24 +744,24 @@ html {
           html body #main-wrapper #main-content #chapters_list_home .btn:hover {
             color: #248EB9;
             background-color: #fff; }
-      html body #main-wrapper #main-content.chapter_detail #highlighted, html body #main-wrapper #main-content.chapters_list #highlighted, html body #main-wrapper #main-content.connexion #highlighted {
+      html body #main-wrapper #main-content.chapter_detail #highlighted, html body #main-wrapper #main-content.chapters_page #highlighted, html body #main-wrapper #main-content.connexion #highlighted {
         min-height: initial;
         height: 60vh; }
-        html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content, html body #main-wrapper #main-content.chapters_list #highlighted #highlighted_content, html body #main-wrapper #main-content.connexion #highlighted #highlighted_content {
+        html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content, html body #main-wrapper #main-content.chapters_page #highlighted #highlighted_content, html body #main-wrapper #main-content.connexion #highlighted #highlighted_content {
           padding-top: 84px; }
-          html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content h2, html body #main-wrapper #main-content.chapters_list #highlighted #highlighted_content h2, html body #main-wrapper #main-content.connexion #highlighted #highlighted_content h2 {
+          html body #main-wrapper #main-content.chapter_detail #highlighted #highlighted_content h2, html body #main-wrapper #main-content.chapters_page #highlighted #highlighted_content h2, html body #main-wrapper #main-content.connexion #highlighted #highlighted_content h2 {
             font-size: 2rem; }
-      html body #main-wrapper #main-content.chapter_detail #chapters_list .row, html body #main-wrapper #main-content.chapters_list #chapters_list .row, html body #main-wrapper #main-content.connexion #chapters_list .row {
+      html body #main-wrapper #main-content.chapter_detail #chapters_list .row, html body #main-wrapper #main-content.chapters_page #chapters_list .row, html body #main-wrapper #main-content.connexion #chapters_list .row {
         padding: 5rem 0;
         display: flex;
         justify-content: space-between; }
-      html body #main-wrapper #main-content.chapter_detail #comments, html body #main-wrapper #main-content.chapters_list #comments, html body #main-wrapper #main-content.connexion #comments {
+      html body #main-wrapper #main-content.chapter_detail #comments, html body #main-wrapper #main-content.chapters_page #comments, html body #main-wrapper #main-content.connexion #comments {
         padding: 4rem;
         background-color: #0e3c54;
         position: relative; }
-        html body #main-wrapper #main-content.chapter_detail #comments header, html body #main-wrapper #main-content.chapters_list #comments header, html body #main-wrapper #main-content.connexion #comments header {
+        html body #main-wrapper #main-content.chapter_detail #comments header, html body #main-wrapper #main-content.chapters_page #comments header, html body #main-wrapper #main-content.connexion #comments header {
           text-align: center; }
-          html body #main-wrapper #main-content.chapter_detail #comments header h2, html body #main-wrapper #main-content.chapters_list #comments header h2, html body #main-wrapper #main-content.connexion #comments header h2 {
+          html body #main-wrapper #main-content.chapter_detail #comments header h2, html body #main-wrapper #main-content.chapters_page #comments header h2, html body #main-wrapper #main-content.connexion #comments header h2 {
             font-size: 2rem;
             padding-bottom: 2rem;
             margin-bottom: 4rem;
@@ -939,194 +946,194 @@ html {
               width: 1px;
               height: 20px;
               background-color: #fff; }
-      html body #main-wrapper .col-12 {
+      html body #main-wrapper .col-sm-6 {
         padding: 2rem 0; }
-        html body #main-wrapper .col-12:nth-child(even) {
+        html body #main-wrapper .col-sm-6:nth-child(even) {
           padding-left: 1rem; }
-        html body #main-wrapper .col-12:nth-child(odd) {
+        html body #main-wrapper .col-sm-6:nth-child(odd) {
           padding-right: 1rem; }
-        html body #main-wrapper .col-12 .chapter {
-          text-align: left;
-          position: relative;
-          padding: 2rem 0 4rem 0; }
-          html body #main-wrapper .col-12 .chapter.chapter_mini {
-            -o-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-            -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-            -webkit-transition: box-shadow 0.5s ease;
-            transition: box-shadow 0.5s ease;
-            background-color: #fff;
+      html body #main-wrapper .chapter {
+        text-align: left;
+        position: relative;
+        padding: 2rem 0 4rem 0; }
+        html body #main-wrapper .chapter.chapter_mini {
+          -o-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+          -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+          -webkit-transition: box-shadow 0.5s ease;
+          transition: box-shadow 0.5s ease;
+          background-color: #fff;
+          overflow: hidden;
+          padding: 0;
+          margin-top: 5rem; }
+          html body #main-wrapper .chapter.chapter_mini:first-child, html body #main-wrapper .chapter.chapter_mini:nth-child(2) {
+            margin-top: 0; }
+          html body #main-wrapper .chapter.chapter_mini .chapter_thumb {
+            width: auto;
+            height: 350px;
+            z-index: 1;
             overflow: hidden;
-            padding: 0;
-            margin-top: 5rem; }
-            html body #main-wrapper .col-12 .chapter.chapter_mini:first-child, html body #main-wrapper .col-12 .chapter.chapter_mini:nth-child(2) {
-              margin-top: 0; }
-            html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_thumb {
-              width: auto;
+            background-color: #000;
+            -webkit-transition: height 0.5s ease;
+            transition: height 0.5s ease; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_thumb img {
+              width: 100%;
               height: 350px;
-              z-index: 1;
-              overflow: hidden;
-              background-color: #000;
-              -webkit-transition: height 0.5s ease;
-              transition: height 0.5s ease; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_thumb img {
-                width: 100%;
-                height: 350px;
-                display: block;
-                opacity: 1;
-                -o-transform: scale(1);
-                -moz-transform: scale(1);
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                -webkit-transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
-                transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease; }
-            html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_date {
+              display: block;
+              opacity: 1;
+              -o-transform: scale(1);
+              -moz-transform: scale(1);
+              -webkit-transform: scale(1);
+              transform: scale(1);
+              -webkit-transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+              transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease; }
+          html body #main-wrapper .chapter.chapter_mini .chapter_date {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding-top: 0.7rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #248EB9;
+            text-align: center;
+            line-height: 1.3;
+            -o-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_date span {
+              display: block;
+              font-weight: bold; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_date_month {
+              font-size: 0.6rem;
+              text-transform: uppercase; }
+          html body #main-wrapper .chapter.chapter_mini .chapter_body {
+            background-color: #0e3c54;
+            height: 160px;
+            padding: 1.5rem;
+            -webkit-transition: height 0.5s ease;
+            transition: height 0.5s ease; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_title,
+            html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_subtitle {
+              padding: 0 0 0.6rem 0; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_title {
+              color: #fff;
+              font-size: 1.5rem;
+              text-transform: initial;
+              -webkit-transition: color 0.5s ease;
+              transition: color 0.5s ease; }
+              html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_title:hover {
+                color: #248EB9; }
+              html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_title a {
+                font-weight: bold; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_subtitle {
+              color: #248EB9;
+              font-size: 1.2rem;
+              text-transform: uppercase; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_body_date_creation {
+              display: none; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_body .chapter_description {
+              color: #fff;
+              font-size: 0.9rem;
+              opacity: 0;
               position: absolute;
-              top: 1.5rem;
-              right: 1.5rem;
-              width: 3.5rem;
-              height: 3.5rem;
-              padding-top: 0.7rem;
+              bottom: 3.5rem;
+              left: 0;
+              margin: 0;
+              padding: 1rem 1.5rem;
+              max-height: 170px;
+              overflow: hidden;
+              -webkit-transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
+              transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
+              -o-transform: translateY(25px);
+              -moz-transform: translateY(25px);
+              -webkit-transform: translateY(25px);
+              transform: translateY(25px); }
+          html body #main-wrapper .chapter.chapter_mini .chapter_footer {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            left: 1.5rem;
+            font-size: 0.9rem;
+            z-index: 3; }
+            html body #main-wrapper .chapter.chapter_mini .chapter_footer .icon_comments a {
               font-size: 1rem;
               color: #fff;
-              background-color: #248EB9;
-              text-align: center;
-              line-height: 1.3;
-              -o-border-radius: 50%;
-              -moz-border-radius: 50%;
-              -webkit-border-radius: 50%;
-              border-radius: 50%; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_date span {
-                display: block;
-                font-weight: bold; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_date_month {
-                font-size: 0.6rem;
-                text-transform: uppercase; }
-            html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body {
-              background-color: #0e3c54;
-              height: 160px;
-              padding: 1.5rem;
-              -webkit-transition: height 0.5s ease;
-              transition: height 0.5s ease; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_title,
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_subtitle {
-                padding: 0 0 0.6rem 0; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_title {
-                color: #fff;
-                font-size: 1.5rem;
-                text-transform: initial;
-                -webkit-transition: color 0.5s ease;
-                transition: color 0.5s ease; }
-                html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_title:hover {
-                  color: #248EB9; }
-                html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_title a {
-                  font-weight: bold; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_subtitle {
-                color: #248EB9;
-                font-size: 1.2rem;
-                text-transform: uppercase; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_body_date_creation {
-                display: none; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_body .chapter_description {
-                color: #fff;
-                font-size: 0.9rem;
-                opacity: 0;
-                position: absolute;
-                bottom: 3.5rem;
-                left: 0;
-                margin: 0;
-                padding: 1rem 1.5rem;
-                max-height: 170px;
-                overflow: hidden;
-                -webkit-transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
-                transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
-                -o-transform: translateY(25px);
-                -moz-transform: translateY(25px);
-                -webkit-transform: translateY(25px);
-                transform: translateY(25px); }
-            html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_footer {
-              position: absolute;
-              bottom: 1.5rem;
-              right: 1.5rem;
-              left: 1.5rem;
-              font-size: 0.9rem;
-              z-index: 3; }
-              html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_footer .icon_comments a {
-                font-size: 1rem;
-                color: #fff;
-                text-decoration: underline;
-                -webkit-transition: all 0.5s ease;
-                transition: all 0.5s ease; }
-                html body #main-wrapper .col-12 .chapter.chapter_mini .chapter_footer .icon_comments a:hover {
-                  color: #248EB9; }
-            html body #main-wrapper .col-12 .chapter.chapter_mini:hover {
-              -o-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
-              -moz-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
-              -webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
-              box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3); }
-              html body #main-wrapper .col-12 .chapter.chapter_mini:hover .chapter_thumb {
-                height: 200px; }
-                html body #main-wrapper .col-12 .chapter.chapter_mini:hover .chapter_thumb img {
-                  opacity: 0.6;
-                  -o-transform: scale(1.2);
-                  -moz-transform: scale(1.2);
-                  -webkit-transform: scale(1.2);
-                  transform: scale(1.2);
-                  -webkit-filter: blur(3px);
-                  -moz-filter: blur(3px);
-                  -o-filter: blur(3px);
-                  filter: blur(3px); }
-              html body #main-wrapper .col-12 .chapter.chapter_mini:hover .chapter_body {
-                height: 310px; }
-                html body #main-wrapper .col-12 .chapter.chapter_mini:hover .chapter_body .chapter_title,
-                html body #main-wrapper .col-12 .chapter.chapter_mini:hover .chapter_body .chapter_subtitle {
-                  -webkit-animation: titleBlur 0.5s ease;
-                  animation: titleBlur 0.5s ease; }
-                html body #main-wrapper .col-12 .chapter.chapter_mini:hover .chapter_body .chapter_description {
-                  opacity: 1;
-                  -webkit-transition-delay: 0.1s;
-                  -moz-transition-delay: 0.1s;
-                  -o-transition-delay: 0.1s;
-                  transition-delay: 0.1s;
-                  -o-transform: translateY(0);
-                  -moz-transform: translateY(0);
-                  -webkit-transform: translateY(0);
-                  transform: translateY(0); }
-          html body #main-wrapper .col-12 .chapter a {
-            color: inherit; }
-          html body #main-wrapper .col-12 .chapter .chapter_body {
-            position: relative;
-            padding: 2rem;
-            color: #0e3c54; }
-            html body #main-wrapper .col-12 .chapter .chapter_body .chapter_body_head {
-              display: flex;
-              justify-content: space-between;
-              padding: 1rem 0; }
-            html body #main-wrapper .col-12 .chapter .chapter_body .chapter_title,
-            html body #main-wrapper .col-12 .chapter .chapter_body .chapter_subtitle,
-            html body #main-wrapper .col-12 .chapter .chapter_body .chapter_body_date_creation {
-              margin: 0;
-              padding: 0 0 1.5rem 0; }
-            html body #main-wrapper .col-12 .chapter .chapter_body .chapter_body_date_creation {
-              display: inline-block;
-              font-style: italic;
-              color: #0e3c54;
-              font-size: 1.2rem; }
-            html body #main-wrapper .col-12 .chapter .chapter_body .chapter_description {
-              text-align: justify;
-              color: #0e3c54;
-              font-size: 1.1rem;
-              line-height: 1.5; }
-          html body #main-wrapper .col-12 .chapter .icon_comments {
+              text-decoration: underline;
+              -webkit-transition: all 0.5s ease;
+              transition: all 0.5s ease; }
+              html body #main-wrapper .chapter.chapter_mini .chapter_footer .icon_comments a:hover {
+                color: #248EB9; }
+          html body #main-wrapper .chapter.chapter_mini:hover {
+            -o-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3); }
+            html body #main-wrapper .chapter.chapter_mini:hover .chapter_thumb {
+              height: 200px; }
+              html body #main-wrapper .chapter.chapter_mini:hover .chapter_thumb img {
+                opacity: 0.6;
+                -o-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+                -webkit-filter: blur(3px);
+                -moz-filter: blur(3px);
+                -o-filter: blur(3px);
+                filter: blur(3px); }
+            html body #main-wrapper .chapter.chapter_mini:hover .chapter_body {
+              height: 310px; }
+              html body #main-wrapper .chapter.chapter_mini:hover .chapter_body .chapter_title,
+              html body #main-wrapper .chapter.chapter_mini:hover .chapter_body .chapter_subtitle {
+                -webkit-animation: titleBlur 0.5s ease;
+                animation: titleBlur 0.5s ease; }
+              html body #main-wrapper .chapter.chapter_mini:hover .chapter_body .chapter_description {
+                opacity: 1;
+                -webkit-transition-delay: 0.1s;
+                -moz-transition-delay: 0.1s;
+                -o-transition-delay: 0.1s;
+                transition-delay: 0.1s;
+                -o-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -webkit-transform: translateY(0);
+                transform: translateY(0); }
+        html body #main-wrapper .chapter a {
+          color: inherit; }
+        html body #main-wrapper .chapter .chapter_body {
+          position: relative;
+          padding: 2rem;
+          color: #0e3c54; }
+          html body #main-wrapper .chapter .chapter_body .chapter_body_head {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0; }
+          html body #main-wrapper .chapter .chapter_body .chapter_title,
+          html body #main-wrapper .chapter .chapter_body .chapter_subtitle,
+          html body #main-wrapper .chapter .chapter_body .chapter_body_date_creation {
+            margin: 0;
+            padding: 0 0 1.5rem 0; }
+          html body #main-wrapper .chapter .chapter_body .chapter_body_date_creation {
             display: inline-block;
-            color: #248EB9; }
-            html body #main-wrapper .col-12 .chapter .icon_comments a {
-              font-size: 1.2rem; }
-              html body #main-wrapper .col-12 .chapter .icon_comments a .far {
-                font-weight: 800;
-                margin-right: 0.5rem;
-                font-size: inherit; }
+            font-style: italic;
+            color: #0e3c54;
+            font-size: 1.2rem; }
+          html body #main-wrapper .chapter .chapter_body .chapter_description {
+            text-align: justify;
+            color: #0e3c54;
+            font-size: 1.1rem;
+            line-height: 1.5; }
+        html body #main-wrapper .chapter .icon_comments {
+          display: inline-block;
+          color: #248EB9; }
+          html body #main-wrapper .chapter .icon_comments a {
+            font-size: 1.2rem; }
+            html body #main-wrapper .chapter .icon_comments a .far {
+              font-weight: 800;
+              margin-right: 0.5rem;
+              font-size: inherit; }
 @keyframes titleBlur {
   0% {
     opacity: 0.6;
@@ -1300,13 +1307,233 @@ html {
 /* Extra small devices (phones, less than 767px) */
 @media only screen and (max-width: 320px) {
   html body {
-    font-size: 9px !important; } }
+    font-size: 9px !important; }
+    html body #main-wrapper #main-content #highlighted #highlighted_content h1 {
+      line-height: 1.2;
+      font-size: 2rem; }
+      html body #main-wrapper #main-content #highlighted #highlighted_content h1::before {
+        top: -1rem; }
+      html body #main-wrapper #main-content #highlighted #highlighted_content h1:after {
+        bottom: -1rem; }
+    html body #main-wrapper #main-content #highlighted #highlighted_content h2 {
+      margin-top: 2rem; }
+    html body #main-wrapper #main-content #highlighted #highlighted_content .arrow_content {
+      bottom: 0.5rem; } }
 /* Small devices (tablets, 321px and up) */
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+  html body #menu_open {
+    width: 100%;
+    max-width: 100%; }
+    html body #menu_open.admin {
+      background-color: #0e3c54; }
+    html body #menu_open .fas#cross_close_menu {
+      right: 2rem; }
+    html body #menu_open .nav {
+      padding: 4rem 2rem; }
+      html body #menu_open .nav li {
+        padding: 1rem 0; }
+        html body #menu_open .nav li a {
+          vertical-align: middle;
+          line-height: 1.5; }
+        html body #menu_open .nav li:before {
+          top: 1.5rem; }
+  html body #main-wrapper #main-header #menu .container-fluid {
+    margin: 0; }
+    html body #main-wrapper #main-header #menu .container-fluid .author_name {
+      font-size: 1.2rem; }
+    html body #main-wrapper #main-header #menu .container-fluid button span {
+      font-size: 1.2rem;
+      visibility: hidden; }
+      html body #main-wrapper #main-header #menu .container-fluid button span:before {
+        visibility: visible;
+        position: absolute;
+        right: 0;
+        font-size: 1.5rem;
+        top: 1.5rem; }
+  html body #main-wrapper #main-header #menu.background .container-fluid button span:before {
+    top: 0.75rem; }
+  html body #main-wrapper #main-header.admin .menu_admin_desktop {
+    display: none; }
+  html body #main-wrapper #main-header.admin #menu .container-fluid .row .admin_button_menu {
+    display: block !important; }
+  html body #main-wrapper #main-footer .footer_realisation {
+    padding-top: 0.5rem;
+    display: block; }
+    html body #main-wrapper #main-footer .footer_realisation::before {
+      display: none; }
+  html body #main-wrapper #main-content .col-sm-6:nth-child(even), html body #main-wrapper #main-content .col-sm-6:nth-child(odd) {
+    padding-left: 15px;
+    padding-right: 15px; }
+  html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_thumb {
+    height: 200px; }
+    html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_thumb img {
+      opacity: 1;
+      height: 200px;
+      -o-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2); }
+  html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_body {
+    height: 260px; }
+    html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_body .chapter_description {
+      opacity: 1;
+      bottom: 5.5rem;
+      max-height: 100px; }
+  html body #main-wrapper #main-content #author_informations .container .row .author_photo_box {
+    max-width: 300px;
+    height: 300px; }
+  html body #main-wrapper #main-content #author_informations .container .row .author_description {
+    padding-left: 2rem;
+    padding-top: 3rem; }
+    html body #main-wrapper #main-content #author_informations .container .row .author_description .author_description_title {
+      font-size: 1.8rem; }
+  html body #main-wrapper #main-content.chapters_page #chapters_list .col-sm-6:nth-child(even), html body #main-wrapper #main-content.chapters_page #chapters_list .col-sm-6:nth-child(odd) {
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
+  html body #main-wrapper #main-content.chapter_detail .chapter_description .chapter_full .chapter_body {
+    padding: 2rem 0; }
+    html body #main-wrapper #main-content.chapter_detail .chapter_description .chapter_full .chapter_body .chapter_body_head .icon a {
+      font-size: 1rem; }
+      html body #main-wrapper #main-content.chapter_detail .chapter_description .chapter_full .chapter_body .chapter_body_head .icon a .far {
+        margin-right: 0; }
+  html body #main-wrapper #main-content.chapter_detail #comments {
+    padding: 4rem 0; }
+    html body #main-wrapper #main-content.chapter_detail #comments .bloc_comments_details {
+      order: 2; }
+      html body #main-wrapper #main-content.chapter_detail #comments .bloc_comments_details .comments_details {
+        margin-right: 1rem; }
+    html body #main-wrapper #main-content.chapter_detail #comments .bloc_comments_add {
+      order: 1; }
+      html body #main-wrapper #main-content.chapter_detail #comments .bloc_comments_add .add_comment_form {
+        width: 100%; }
+  html body #main-wrapper #main-content.connexion .connexion_form .input-group .input-group-prepend {
+    width: 35%; }
+  html body #main-wrapper #main-content.connexion .connexion_form .button .btn {
+    margin: 0 auto; }
+  html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_button {
+    padding-top: 2rem; }
+  html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_element.content {
+    max-height: 105px; }
+  html body #main-wrapper #main-content.admin .container .admin_list .type_comments_buttons {
+    padding: 2rem 0; }
+    html body #main-wrapper #main-content.admin .container .admin_list .type_comments_buttons p {
+      margin: 0 auto; }
+      html body #main-wrapper #main-content.admin .container .admin_list .type_comments_buttons p a {
+        margin: 1rem 0; }
+  html body #main-wrapper #main-content.admin .container .admin_form form .form_field .label_field {
+    font-size: 1.1rem; }
+  html body #main-wrapper #main-content.admin .container .admin_form form .form_field .btn {
+    width: 60%;
+    margin: 1rem auto; } }
+/* IPHONE 5 paysage */
+@media only screen and (min-width: 550px) and (max-height: 340px) {
+  #main-content.chapter_detail #highlighted {
+    height: 90vh !important; }
+  #main-content.chapters_page #highlighted {
+    height: 75vh !important; } }
+/* IPHONE X paysage */
+@media only screen and (min-width: 730px) and (max-width: 850px) and (max-height: 836px) {
+  #main-content.admin #highlighted {
+    height: 85vh !important; }
+  #main-content.chapters_page #highlighted {
+    height: 75vh !important; }
+  #main-content.chapter_detail #highlighted {
+    height: 90vh !important; }
+  #main-content.chapter_detail .chapter_description .chapter_full .chapter_body {
+    padding: 2rem 0; }
+  #main-content.chapter_detail #comments {
+    padding: 4rem 0; }
+    #main-content.chapter_detail #comments .bloc_comments_details {
+      order: 2;
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 100%; }
+      #main-content.chapter_detail #comments .bloc_comments_details .comments_details {
+        margin-right: 1rem; }
+    #main-content.chapter_detail #comments .bloc_comments_add {
+      order: 1;
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 100%; }
+      #main-content.chapter_detail #comments .bloc_comments_add .add_comment_form {
+        width: 100%; } }
 /* Medium devices (desktops, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  html body #menu_open {
+    width: 30rem; }
+    html body #menu_open.admin {
+      background-color: #0e3c54; }
+    html body #menu_open .nav li:before {
+      top: 1.2rem; }
+  html body #main-wrapper #main-header.admin .menu_admin_desktop {
+    display: none; }
+  html body #main-wrapper #main-header.admin #menu .container-fluid .row .admin_button_menu {
+    display: block !important; }
+  html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_thumb {
+    height: 200px; }
+    html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_thumb img {
+      opacity: 1;
+      height: 200px;
+      -o-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2); }
+  html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_body {
+    height: 260px; }
+    html body #main-wrapper #main-content .col-sm-6 .chapter.chapter_mini .chapter_body .chapter_description {
+      opacity: 1;
+      bottom: 5.5rem;
+      max-height: 100px; }
+  html body #main-wrapper #main-content #author_informations .container .row .author_photo_box {
+    max-width: 200px;
+    height: 200px; }
+  html body #main-wrapper #main-content #author_informations .container .row .author_description {
+    padding-left: 2rem; }
+    html body #main-wrapper #main-content #author_informations .container .row .author_description .author_description_title {
+      font-size: 1.8rem; }
+  html body #main-wrapper #main-content .bloc_comments_add .add_comment .add_comment_form {
+    width: 100%; } }
+/* IPAD Portrait  */
+@media only screen and (min-width: 992px) and (max-width: 1100px) and (max-height: 992px) {
+  html body #menu_open {
+    width: 30rem; }
+    html body #menu_open.admin {
+      background-color: #0e3c54; }
+    html body #menu_open .nav li:before {
+      top: 1.2rem; }
+  html body #main-wrapper #main-header.admin .menu_admin_desktop {
+    display: none; }
+  html body #main-wrapper #main-header.admin .container-fluid .row .admin_button_menu {
+    display: block !important; }
+  html body #main-wrapper #main-content .bloc_comments_add .add_comment .add_comment_form {
+    width: 100%; } }
+/* IPAD Pro Portrait  */
+@media only screen and (min-width: 1000px) and (max-width: 1100px) and (max-height: 1400px) {
+  html body #menu_open {
+    width: 30rem; }
+    html body #menu_open.admin {
+      background-color: #0e3c54; }
+    html body #menu_open .nav li:before {
+      top: 1.2rem; }
+  html body #main-wrapper #main-header.admin .menu_admin_desktop {
+    display: none; }
+  html body #main-wrapper #main-header.admin .container-fluid .row .admin_button_menu {
+    display: block !important; }
+  html body #main-wrapper #main-content .bloc_comments_add .add_comment .add_comment_form {
+    width: 100%; } }
+/* IPAD Pro Paysage */
+@media only screen and (min-width: 1300px) and (max-width: 1400px) and (max-height: 1100px) {
+  html body #menu_open {
+    width: 30rem; }
+    html body #menu_open.admin {
+      background-color: #0e3c54; }
+    html body #menu_open .nav li:before {
+      top: 1.2rem; }
+  html body #main-wrapper #main-header.admin .menu_admin_desktop {
+    display: none; }
+  html body #main-wrapper #main-header.admin .container-fluid .row .admin_button_menu {
+    display: block !important; } }
 /* Large devices (desktops, 993px and up) */
 /* Very Large devices (desktops, 2000px and up) */
-@media only screen and (min-width: 2000px) {
-  html body #main-wrapper #main-content #eLearning {
-    background-position: bottom 20% left -5%, top 10% right 3%; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,7 +4,7 @@
 
 <!-- <h1>Welcome <?php //strtoupper($_SESSION['login']);  ?></h1> -->
 <section id="main-content" class="admin ">
-    <section id="highlighted" style="background-image: url('public/img/alaska3.jpg')">
+    <section id="highlighted" class="col-12" style="background-image: url('public/img/alaska3.jpg')">
         <div class="highlighted_img_opacity"></div>
         <div id="highlighted_content">
             <h1>Édition de l'article</h1>
