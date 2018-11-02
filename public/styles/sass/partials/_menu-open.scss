@@ -1,0 +1,76 @@
+ #menu_open {
+     position: fixed;
+     right: 0;
+     top: 0;
+     bottom: 0;
+     z-index: 101;
+     height: 100vh;
+     width: $width_menu;
+     max-width: $width_max_menu;
+     background-color: $blueLight;
+     @include transform(translateX(100%));
+     @include transition(all 0.75s ease);
+     &:before{
+        @include transform(rotate(-5deg));
+        content: "";
+     }
+     .fas {
+         color: $white;
+         font-size: $font_menu_before;
+         &.fa-times {
+             position: absolute;
+             top: 1.5rem;
+             right: 3rem;
+         }
+         &#cross_close_menu {
+             cursor: pointer;
+             @include transition(color 0.5s ease);
+             &:hover{
+                 color: $blueDark;
+             }
+         }
+     }
+     .nav {
+         padding: $padding_menu;
+         li {
+             padding: $padding_menu_nav_li;
+             border-bottom: 1px $white solid;
+             position: relative;
+             &:last-child {
+                 border-bottom: transparent;
+             }
+             &:before, a{
+                 @include transition(color 0.5s ease);
+             }
+             &:before {
+                 font-size: $font_menu_nav_li_before;
+                 position: absolute;
+                 left: 0;
+                 top: 1.2rem;
+             }
+             a {
+                 padding: $padding_menu_nav_li_a;
+                 color: $white;
+                 font-size: $font_menu_nav_li_a;
+                 text-transform: uppercase;
+                 font-weight: bold;
+                 letter-spacing: $spacing_menu_nav_li_a;
+             }
+             &:hover{
+                 &:before, a{
+                     color: $blueDark;
+                 }
+             }
+         }
+     }
+ }
+
+ &.show-menu {
+     #main-wrapper {
+         opacity: 0.8;
+     }
+     #menu_open {
+         @include transform(translateX(0));
+         @include box-shadow(-1px, 0, 15px, 1px, $blueDark);
+     }
+ }

@@ -1,0 +1,213 @@
+/**
+*
+* Commons CSS Elements
+*
+**/
+
+/***** Suprression CSS de base *****/
+
+a:focus,
+a:hover,
+a:active,
+button:focus,
+button:hover,
+button:active,
+:focus {
+    outline: 0 !important;
+}
+
+@mixin focus-btn-delete {
+    .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .btn-primary:not(:disabled):not(.disabled):active:focus,
+    .show>.btn-primary.dropdown-toggle:focus,
+    .btn:focus,
+    .btn-primary.focus,
+    .btn-primary:focus {
+        box-shadow: 0 0 0 0 transparent !important;
+        background-color: transparent;
+        border-color: transparent;
+    }
+}
+
+.form-control:focus{
+    @include box-shadow(0,0,0,0, transparent);
+}
+button::-moz-focus-inner {
+    border: 0 !important;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.no-padding {
+    padding: 0;
+}
+
+/***** Strong *****/
+
+strong {
+    font-weight: bold;
+}
+
+
+/***** Background Opacity Highlighted *****/
+
+.imgOpacity {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+}
+
+
+/***** Title Decoration *****/ 
+.title_decoration {
+    position: relative;
+    &:after {
+        width: 30%;
+        content: "";
+        height: 5px;
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        background-color: $white;
+    }
+    &_center {
+        &:after{
+            margin: 0 auto;
+            right: 0;
+        }
+    }
+}
+/***** Arrow Down Animation *****/
+
+@mixin arrowHoverAnimation() {
+    &::before,
+    &::after {
+        box-sizing: inherit;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.spin {
+        width: 5rem;
+        height: 5rem;
+        padding: 0;
+        &::before,
+        &::after {
+            top: 0;
+            left: 0;
+        }
+        &:before {
+            border: 2px solid transparent;
+            @include transition(border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s);
+        }
+        &::after {
+            border: 0 solid transparent;
+            @include transition(transform 0.4s linear 0s, border-left-width 0s linear 0.35s);
+        }
+        &:hover {
+            color: $blueLight;
+            &:before {
+                border-top-color: $blueLight;
+                border-right-color: $blueLight;
+                border-bottom-color: $blueLight;
+            }
+            &:after {
+                border-top: 2px solid $blueLight;
+                border-left-width: 2px;
+                border-right-width: 2px;
+                transform: rotate(270deg);
+            }
+        }
+    }
+
+    &.circle {
+        border-radius: 100%;
+        box-shadow: none;
+        &::before,
+        &::after {
+            border-radius: 100%;
+        }
+    }
+}
+
+/***** Arrow Down Decoration *****/
+
+@mixin arrowAnimation(){
+    width: 24px;
+    height: 24px;
+    .chevron {
+        position: absolute;
+        top: 0.25rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        @include transform(scale3d(0.5, 0.5, 0.5));
+        @include animation(scrollDown 3s ease-out infinite);
+        &:first-child{
+            @include animation(scrollDown 3s ease-out 1s infinite);
+        }
+        &:nth-child(2){
+            @include animation(scrollDown 3s ease-out 2s infinite);
+        }
+        &::before, &::after{
+            content: ' ';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 51%;
+            background-color: $white;
+            @include transition(background-color 0.25s ease);
+        }
+        &:before {
+            left: 0;
+            @include transform(skew(0deg, 30deg));
+        }
+        &:after {
+            right: 0;
+            width: 50%;
+            @include transform(skew(0deg, -30deg));
+        }
+    }
+    &:hover {
+        .chevron{
+            &::before,
+            &::after {
+                background-color: $blueLight;
+            }
+        }
+    }
+}
+
+    /** Animation **/
+
+    @keyframes scrollDown {
+        25% {
+            opacity: 1;
+        }
+        33% {
+            opacity: 1;
+            @include transform(translateY(30px));
+        }
+        67% {
+            opacity: 1;
+            @include transform(translateY(40px));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(55px) scale3d(0.5, 0.5, 0.5));
+            
+        }
+    }

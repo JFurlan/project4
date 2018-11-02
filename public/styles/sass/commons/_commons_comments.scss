@@ -1,0 +1,172 @@
+/**
+*
+* Commons CSS Comments
+*
+**/
+
+.bloc_comments_details{
+    &>p{
+        font-size: 1rem;
+        color: $white;
+        font-weight: bold;
+        padding-top: 2rem;
+    }
+    .comments_details {
+        position: relative;
+        padding: 2rem;
+        margin: 2rem 2rem 4rem 0;
+        background-color: $white;
+        border: 2px solid $blueDark;
+        @include border-radius(5px);
+        p {
+            font-size: 1rem;
+            color: $blueDark;
+            padding: 0.5rem 0;
+            font-weight: bold;
+        }
+        .comments_pseudo {
+            text-transform: uppercase;
+            position: absolute;
+            left: 2rem;
+            top: -2rem;
+            background-color: $blueDark;
+            border: 2px solid $white;
+            padding: 0 1rem;
+            max-width: 85%;
+            p {
+                color: $white;
+                font-weight: bold;
+                font-size: 1rem;
+                overflow: hidden;
+                word-break: break-word;
+            }
+        }
+        .comments_statut {
+            font-family: $RobotoRegular;
+            &:before {
+                margin-right: 0.5rem;
+                font-weight: 800;
+                font-family: 'Font Awesome\ 5 Free';
+            }
+            &.publish {
+                color: $blueLight;
+                &:before {
+                    color: inherit;
+                }
+            }
+            &.reported {
+                color: $redDark;
+                &:before {
+                    color: inherit;
+                }
+            }
+        }
+        .comments_creation p {
+            font-weight: normal;
+        }
+        .comments_content {
+            font-weight: none;
+            &::after {
+                bottom: initial;
+                top: 0.5rem;
+                background-color: $blueDark;
+                height: 2px;
+                width: 10%;
+            }
+            p {
+                font-size: 1rem;
+                padding: 1.5rem 0 0 0;
+                word-break: break-word;
+            }
+        }
+        .comments_reported {
+            position: absolute;
+            top: -1rem;
+            right: -1rem;
+            .comment_signal {
+                position: relative;
+                border: $blueDark;
+                @include border-radius(50%);
+                width: 3rem;
+                height: 3rem;
+                background-color: $blueDark;
+                border: 2px solid $white;
+                cursor: pointer;
+                @include transition(background-color 0.5s ease);
+                &:before {
+                    position: absolute;
+                    display: inline-block;
+                    text-align: center;
+                    top: 50%;
+                    right: 0;
+                    left: 0;
+                    font-size: 1.5rem;
+                    color: white;
+                    @include transform(translateY(-50%));
+                    border: $blueDark;
+                    @include border-radius(50%);
+                }
+                &.reported, &:hover {
+                    background-color: $redDark;
+                }
+            }
+        }
+    }
+}
+
+.bloc_comments_add{
+    position: relative;
+    .add_comment {
+        padding-top: 2rem;
+        position: sticky;
+        top: 70px;
+        right: 0;
+        .add_comment_title {
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            letter-spacing: 0.2rem;
+            text-align: center;
+            padding-bottom: 2rem;
+            &::after {
+                height: 2px;
+                width: 20%;
+            }
+        }
+        .add_comment_form {
+            padding: 2rem 0;
+            width: 80%;
+            margin: 0 auto;
+            input,
+            textarea {
+                display: block;
+                width: 100%;
+                padding: 0.75rem;
+                margin: 1.5rem 0;
+                @include border-radius(5px);
+                border: 1px solid transparent;
+                color: $blueDark;
+                font-size: 1rem;
+            }
+            input {
+                &:first-of-type {
+                    margin-top: 0;
+                }
+            }
+            input[type="submit"] {
+                background-color: $orangeDark;
+                border: 1px solid transparent;
+                color: $white;
+                text-transform: uppercase;
+                font-weight: bold;
+                cursor: pointer;
+                @include transition(all 0.5s ease);
+                &:hover {
+                    color: $white;
+                    background-color: $blueDark;
+                    border-color: $white;
+                }
+            }
+        }
+    }
+}

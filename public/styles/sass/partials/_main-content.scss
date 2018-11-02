@@ -1,0 +1,248 @@
+#main-content {
+    .highlighted_img_opacity {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.5;
+        background-color: $black;
+        z-index: 1;
+    }
+    #highlighted {
+        min-height: 100vh;
+        height: 100vh;
+        position: relative;
+        background: url(../../img/alaska3.jpg) no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #highlighted_content {
+            display: inline-block;
+            text-align: center;
+            z-index: 2;
+            color: $white;
+            h1 {
+                width: auto;
+                position: relative;
+                line-height: 2;
+                letter-spacing: 0.3rem;
+                &:before,
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 5px;
+                    background-color: $white;
+                }
+                &:before {
+                    top: 0;
+                    left: 0;
+                }
+                &:after {
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+            h2 {
+                padding: 1.5rem 0;
+                font-size: 1.6rem;
+                font-family: $RobotoLight;
+                text-transform: uppercase;
+            }
+            .arrow_content {
+                position: absolute;
+                bottom: 1.5rem;
+                left: 0;
+                right: 0;
+                a {
+                    background: none;
+                    border: 0;
+                    box-sizing: border-box;
+                    position: relative;
+                    color: $white;
+                    cursor: pointer;
+                    @include arrowHoverAnimation();
+                    @include arrowAnimation();
+                }
+            }
+        }
+    }
+    #author_informations{
+        background-color: $blueDark;
+        .container{
+            .row{
+                padding: 6rem 0;
+                align-items: center;
+                .author_photo_box{
+                    padding: 0;
+                    max-width: 300px;
+                    height: 300px;
+                    @include border-radius(50%);
+                    margin: 0 auto;
+                    @include box-shadow(0, 0, 50px, 2px, black);
+                    overflow: hidden;
+                    .author_photo{
+                        background: url(../../img/photo1.jpg) no-repeat center center;
+                        background-size: cover;
+                        width: 100%;
+                        height: 100%;
+                        @include transform(scale(1));
+                        @include transition(transform 0.5s ease);
+                    }
+                    &:hover{
+                        .author_photo{
+                            @include transform(scale(1.2));
+                        }
+                    }
+                }
+                .author_description{
+                    color: $white;
+                    .author_description_title{
+                        display: inline-block;
+                        text-transform: uppercase;
+                        padding-bottom: 2rem; 
+                        position: relative;
+                    }
+                    .author_description_content {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    #chapters_list_home{
+        text-align: center;
+        background-color: $white;
+        padding: 6rem 0;
+        // background: url(../../img/alaska5.jpg) no-repeat center center;
+        // background-size: cover;
+        // background-attachment: fixed;
+        background-color: $white;
+        h2{
+            text-align: center;
+            color: $blueDark;
+            display: inline-block;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 2rem;
+            &:after{
+                background-color: $blueDark;
+            }
+        }
+        .row {
+            padding: 5rem 0;
+            display: flex;
+            justify-content: space-between;
+            &.row{
+                padding-bottom: 2rem;
+            }
+        }
+        .btn {
+            background-color: $blueLight;
+            border: $blueLight 2px solid;
+            padding: 0.5rem 0;
+            font-family: $RobotoBold;
+            @include transition(all $duration ease);
+            &:hover{
+                color: $blueLight;
+                background-color: $white;
+            }
+        }
+    }
+    &.chapter_detail,
+    &.chapters_page, 
+    &.connexion {
+        #highlighted{
+            min-height: initial;
+            height: 60vh;
+            #highlighted_content{
+                padding-top: 84px;
+                h2{
+                    font-size: 2rem;
+                }
+            }
+        }
+        #chapters_list{
+            .row {
+                padding: 5rem 0;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        #comments{
+            padding: 4rem;
+            background-color: $blueDark;
+            position: relative;
+            header{
+                text-align: center;
+                h2{
+                    font-size: 2rem;
+                    padding-bottom: 2rem;
+                    margin-bottom: 4rem;
+                    display: inline-block;
+                    color: $white;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    &.connexion{
+        min-height: calc(100vh - 66px);
+        .connexion_form{
+            padding: 3rem 0;
+            .input-group {
+                .input-group-prepend{
+                    width: 25%;
+                    span{
+                        font-size: 0.9rem;
+                        width: 100%;
+                        background-color: $blueLight;
+                        color: $white;
+                        font-weight: bold;
+                        border: 1px solid $blueLight;
+                    }
+                }
+                input{
+                    border: 1px solid $blueLight;
+                }
+            }
+            .button{
+                padding: 2rem 0;
+                .btn{
+                    padding: 0.5rem 0;
+                    background-color: $blueLight;
+                    border: 2px solid $blueLight;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    @include transition(all 0.5s ease);
+                    &:hover{
+                        background-color: $white;
+                        color: $blueLight;
+                    }
+                }
+            }
+        }
+    }
+    &.message{
+        height: calc(100vh - 66px);
+         .highlighted_img_opacity {
+             position: absolute;
+             top: 0;
+             bottom: 66px;
+             left: 0;
+             right: 0;
+             opacity: 0.5;
+             background-color: $black;
+             z-index: 1;
+         }
+        h3{
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}

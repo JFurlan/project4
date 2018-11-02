@@ -1,0 +1,303 @@
+/**
+*
+* Mixins CSS Elements
+*
+**/
+
+/* Transform */
+
+@mixin transform($content) {
+    -o-transform: ($content);
+    -moz-transform: ($content);
+    -webkit-transform: ($content);
+    transform: ($content);
+}
+
+
+/* Box Shadow */
+
+@mixin box-shadow($x-axis: 0px, $y-axis: 1px, $blur: 2px, $spread: 0px, $color: rgba( 0, 0, 0, 0.1)) {
+    -o-box-shadow: ($x-axis $y-axis $blur $spread $color);
+    -moz-box-shadow: ($x-axis $y-axis $blur $spread $color);
+    -webkit-box-shadow: ($x-axis $y-axis $blur $spread $color);
+    box-shadow: ($x-axis $y-axis $blur $spread $color);
+}
+
+/* Text Shadow */
+
+@mixin text-shadow($x-axis: 0px, $y-axis: 1px, $blur: 2px, $color: rgba( 0, 0, 0, 0.1)) {
+    -o-text-shadow: ($x-axis $y-axis $blur $color);
+    -moz-text-shadow: ($x-axis $y-axis $blur $color);
+    -webkit-text-shadow: ($x-axis $y-axis $blur $color);
+    text-shadow: ($x-axis $y-axis $blur $color);
+}
+
+/* Border Radius */
+
+@mixin border-radius($radius) {
+    -o-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+/* Box Sizing */
+
+@mixin box-sizing($size) {
+    -webkit-box-sizing: $size;
+    -moz-box-sizing: $size;
+    -o-box-sizing: $size;
+    box-sizing: $size;
+}
+
+/* Transition */
+
+@mixin transition($transitions...) {
+    $unfoldedTransitions: ();
+    @each $transition in $transitions {
+        $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+    }
+    -webkit-transition: $unfoldedTransitions;
+    transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition($transition) {
+    // Default values
+    $property: all;
+    $duration: .2s;
+    $easing: null; // Browser default is ease, which is what we want
+    $delay: null; // Browser default is 0, which is what we want
+    $defaultProperties: ($property, $duration, $easing, $delay); // Grab transition properties if they exist
+    $unfoldedTransition: ();
+    @for $i from 1 through length($defaultProperties) {
+        $p: null;
+        @if $i <=length($transition) {
+            $p: nth($transition, $i)
+        }
+        @else {
+            $p: nth($defaultProperties, $i)
+        }
+        $unfoldedTransition: append($unfoldedTransition, $p);
+    }
+    @return $unfoldedTransition;
+}
+
+@mixin transition-duration($content) {
+    -webkit-transition-duration: $content;
+    -moz-transition-duration: $content;
+    -o-transition-duration: $content;
+    transition-duration: $content;
+}
+
+@mixin transition-property($content) {
+    -webkit-transition-property: $content;
+    -moz-transition-property: $content;
+    -o-transition-property: $content;
+    transition-property: $content;
+}
+
+@mixin transition-timing-function($content) {
+    -webkit-transition-timing-function: $content;
+    -moz-transition-timing-function: $content;
+    -o-transition-timing-function: $content;
+    transition-timing-function: $content;
+}
+
+@mixin transition-delay($content) {
+    -webkit-transition-delay: $content;
+    -moz-transition-delay: $content;
+    -o-transition-delay: $content;
+    transition-delay: $content;
+}
+
+/* Transform Origin */
+
+@mixin transform-origin($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin; // IE9 only
+    transform-origin: $origin;
+}
+
+/* Translate */
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y); // IE9 only
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+@mixin translate3d($x, $y, $z) {
+    -webkit-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+}
+
+/* Rotate */
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -ms-transform: rotate($degrees); // IE9 only
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+/* Content-Columns */
+
+@mixin content-columns($column-count, $column-gap: $grid-gutter-width) {
+    -webkit-column-count: $column-count;
+    -moz-column-count: $column-count;
+    column-count: $column-count;
+    -webkit-column-gap: $column-gap;
+    -moz-column-gap: $column-gap;
+    column-gap: $column-gap;
+}
+
+/* Filters */
+
+@mixin filter($value) {
+    -webkit-filter: $value;
+    -moz-filter: $value;
+    -o-filter: $value;
+    filter: $value;
+}
+
+// @mixin filter($filter-type, $filter-amount) {
+//     -webkit-filter: unquote($filter-type+unquote('(#{$filter-amount})'));
+//     -moz-filter: unquote($filter-type+unquote('(#{$filter-amount})'));
+//     -ms-filter: unquote($filter-type+unquote('(#{$filter-amount})'));
+//     -o-filter: unquote($filter-type+unquote('(#{$filter-amount})'));
+//     filter: unquote($filter-type+unquote('(#{$filter-amount})'));
+// }
+
+/* Hyphens (traits d'union) */
+
+@mixin hyphens($mode: auto) {
+    word-wrap: break-word;
+    -webkit-hyphens: $mode;
+    -moz-hyphens: $mode;
+    -ms-hyphens: $mode; // IE10+
+    -o-hyphens: $mode;
+    hyphens: $mode;
+}
+
+/* 
+* 
+* Animation 
+*
+*/
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+/* Animation */
+
+@mixin animation($animations...) {
+    $unfoldedanimations: ();
+    @each $animation in $animations {
+        $unfoldedanimations: append($unfoldedanimations, unfoldanimation($animation), comma);
+    }
+    -webkit-animation: $unfoldedanimations;
+    animation: $unfoldedanimations;
+}
+
+@function unfoldanimation($animation) {
+    // Default values
+    $name: all;
+    $duration: .2s;
+    $easing: null; // Browser default is ease, which is what we want
+    $delay: null; // Browser default is 0, which is what we want
+    $iteration: null; // Browser default is 0, which is what we want
+    $defaultProperties: ($name, $duration, $easing, $delay, $iteration); // Grab animation properties if they exist
+    $unfoldedanimation: ();
+    @for $i from 1 through length($defaultProperties) {
+        $p: null;
+        @if $i <=length($animation) {
+            $p: nth($animation, $i)
+        }
+        @else {
+            $p: nth($defaultProperties, $i)
+        }
+        $unfoldedanimation: append($unfoldedanimation, $p);
+    }
+    @return $unfoldedanimation;
+}
+
+
+/* Placeholder */
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+}
+
+
+
+/* 
+*
+* Fonts 
+* 
+*/
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+    $extmods: (eot: "?", svg: "#"+ str-replace($name, " ", "_"));
+    $formats: (otf: "opentype", ttf: "truetype");
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+@function str-replace($string,
+$search,
+$replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string,
+        1,
+        $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)),
+        $search,
+        $replace);
+    }
+
+    @return $string;
+}

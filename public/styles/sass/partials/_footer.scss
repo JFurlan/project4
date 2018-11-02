@@ -1,0 +1,33 @@
+#main-footer {
+    background-color: $blueDark;
+    border-top: 1px solid $white;
+    position: relative;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+    .footer_copyright,
+    .footer_realisation {
+        font-size: 0.9rem;
+        color: $white;
+        strong{
+            a{
+                color: $blueLight;
+                cursor: pointer;
+                font-weight: bold;
+            }
+        }
+        &+span{
+            padding-left: 1rem;
+            position: relative;
+            &:before{
+                content: "";
+                left: 5px;
+                top: -2px;
+                position: absolute;
+                width: 1px;
+                height: 20px;
+                background-color: $white;
+            }
+        }
+    }
+}
