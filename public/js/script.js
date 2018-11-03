@@ -53,6 +53,13 @@ tinymce.init({
 /* TINYMCE Module - End */
 
 
+$('.icon_comments a').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top -= 0
+    }, 1000, 'swing');
+});
+
 $('a.spin').on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({

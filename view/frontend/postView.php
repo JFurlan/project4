@@ -47,7 +47,7 @@
                                 $fullDateComment = $comment->getPostedDate();
                                 $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDateComment);
                             ?>
-                            <aside class="comments_details">
+                            <aside class="comments_details <?= ($comment->getStatut() == 0) ? "" : "reported" ; ?>">
                                 <div class="comments_pseudo">
                                     <p><?= htmlspecialchars($comment->getAuthor()) ?></p>
                                 </div>

@@ -1168,6 +1168,8 @@ html {
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px; }
+        html body #main-wrapper .bloc_comments_details .comments_details.reported p {
+          text-decoration: line-through; }
         html body #main-wrapper .bloc_comments_details .comments_details p {
           font-size: 1rem;
           color: #0e3c54;

@@ -18,6 +18,11 @@
         background-color: $white;
         border: 2px solid $blueDark;
         @include border-radius(5px);
+        &.reported{
+            p{
+                text-decoration: line-through; 
+            }
+        }
         p {
             font-size: 1rem;
             color: $blueDark;
