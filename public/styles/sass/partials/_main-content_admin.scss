@@ -37,6 +37,11 @@
                     &:first-of-type{
                         border-top: 3px solid transparent;
                     }
+                    &.reported{
+                        background-color: #DCDCDC;
+                        border: 3px solid $blueDark;
+                        border-bottom: 3px solid transparent;
+                    }
                     .bloc_element{
                         padding: 0.5rem 0;
                         em{

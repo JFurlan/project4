@@ -837,6 +837,10 @@ html {
           border-top: 3px solid #0e3c54; }
           html body #main-wrapper #main-content.admin .container .admin_list .bloc:first-of-type {
             border-top: 3px solid transparent; }
+          html body #main-wrapper #main-content.admin .container .admin_list .bloc.reported {
+            background-color: #DCDCDC;
+            border: 3px solid #0e3c54;
+            border-bottom: 3px solid transparent; }
           html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_element {
             padding: 0.5rem 0; }
             html body #main-wrapper #main-content.admin .container .admin_list .bloc .bloc_element em {

@@ -23,7 +23,7 @@
                 $fullDate = $comment->getPostedDate();
                 $date = DateTime::createFromFormat('Y-m-d H:i:s', $fullDate);
             ?> 
-            <div class="post bloc row justify-content-between">
+            <div class="post bloc row justify-content-between <?= ($comment->getStatut() === "1") ? "reported" : ""; ?>">
                 <div class="col-12 col-md-9 col-lg-10 bloc_content">
                     <h3 class="bloc_element"><?= htmlspecialchars($comment->getAuthor()) ?></h3>
                     <p class="bloc_element"><em>Le <?= $date->format('d/m/Y'); ?></em></p>

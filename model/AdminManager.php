@@ -24,16 +24,21 @@ class AdminManager extends Database{
         }
     }
 
-    //  public function addAdmin($login, $password)
-    // {
-    //     $db = $this->dbConnect();
+    /**
+     * Function = Requête SQL Ajout admin
+     * @param string $login $password
+     * @return $comments
+     */
+     public function addAdmin($login, $password)
+    {
+        $db = $this->dbConnect();
 
-    //     $req = $db->prepare('INSERT INTO user(login, password) VALUES(:login, :password)') or die(print_r($db->errorInfo()));
+        $req = $db->prepare('INSERT INTO user(login, password) VALUES(:login, :password)') or die(print_r($db->errorInfo()));
 
-    //     $req->bindValue(':login', $login);
-    //     $req->bindValue(':password', md5($password));
-    //     $req->execute();
-    // }
+        $req->bindValue(':login', $login);
+        $req->bindValue(':password', md5($password));
+        $req->execute();
+    }
 
 
     
