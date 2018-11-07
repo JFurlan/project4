@@ -20,7 +20,7 @@
                 <div class="chapter_body_head">
                     <div class="chapter_body_date_creation">Posté le <?= $date->format('d/m/Y'); ?></div>
                     <span class="icon icon_comments">
-                        <a href="#comments">
+                        <a href="#comments" class="comment_button">
                             <i class="far fa-comment-dots"></i>
                             <?= count($comments); ?> commentaires
                         </a>

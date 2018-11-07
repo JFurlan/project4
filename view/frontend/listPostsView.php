@@ -39,7 +39,7 @@
                         </section>
                         <footer class="chapter_footer">
                             <span class="icon icon_comments">
-                                <a href="index.php?action=post&id=<?= $post->getId(); ?>"></i>Découvrir le chapitre</a>
+                                <a href="index.php?action=post&id=<?= $post->getId(); ?>">Découvrir le chapitre</a>
                             </span>
                         </footer>
                     </article>

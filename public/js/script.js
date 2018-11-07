@@ -53,7 +53,7 @@ tinymce.init({
 /* TINYMCE Module - End */
 
 
-$('.icon_comments a').on('click', function (e) {
+$('.icon_comments a.comment_button').on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({
         scrollTop: $($(this).attr('href')).offset().top -= 0
