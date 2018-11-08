@@ -28,9 +28,7 @@
                 <div class="author_description col-12 col-md-8 col-lg-7 ">
                     <h2 class="author_description_title title_decoration">À propos de l'auteur</h2>
                     <div class="author_description_content" >
-                        <p>Some informations about the author Some informations about the author Some informations about the author Some informations
-                        about the author Some informations about the author Some informations about the author Some informations about the author
-                        Some informations about the author Some informations about the author Some informations about the author</p>
+                        <p>I'm Santa Claus! And I'm his friend Jesus. I videotape every customer that comes in here, so that I may blackmail them later. Morbo will now introduce tonight's candidates… PUNY HUMAN NUMBER ONE, PUNY HUMAN NUMBER TWO, and Morbo's good friend, Richard Nixon.</p>
                     </div>
                 </div>
             </div>

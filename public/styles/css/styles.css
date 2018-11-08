@@ -1225,7 +1225,8 @@ html {
         html body #main-wrapper .bloc_comments_details .comments_details .comments_reported {
           position: absolute;
           top: -1rem;
-          right: -1rem; }
+          right: -1rem;
+          cursor: pointer; }
           html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal {
             position: relative;
             border: #0e3c54;
@@ -1259,7 +1260,8 @@ html {
               -webkit-border-radius: 50%;
               border-radius: 50%; }
             html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal.reported, html body #main-wrapper .bloc_comments_details .comments_details .comments_reported .comment_signal:hover {
-              background-color: #BF1405; }
+              background-color: #BF1405;
+              cursor: pointer; }
       html body #main-wrapper .bloc_comments_add {
         position: relative; }
         html body #main-wrapper .bloc_comments_add .add_comment {
